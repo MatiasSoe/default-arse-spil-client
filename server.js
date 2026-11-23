@@ -1,5 +1,5 @@
 const app = require('./src/app');
-const connectDB = require('./src/config/db');
+const connectDB = require('./src/config/database');
 const PORT = process.env.PORT || 3000;
 
 const start = async () => {
