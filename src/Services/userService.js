@@ -1,24 +1,29 @@
-const User = require('../models/userModel');
+const userRepository = require('../Repositories/userRepository');
 
-class UserService {
-    async createUser(userData) {
-        const existingUser = await User.findOne({
-            email: userData.email
-        });
 
-        if (existingUser) {
-            throw new Error('Email er allerede registreret');
-        }
-
-        const user = new User(userData);
-        return user.save();
-    }
-
-    async getAllUsers() {
-        return User.find();
-    }
+exports.CreateUser = async (newUserData) => {
+    const newUser = await userRepository.createUser(newUserData);
+    return newUser;
 }
 
-module.exports = UserService;
+exports.UpdateUser = async (newUserData) => {
+    const updatedUser = await userRepository.updateUser(newUserData);
+    return updatedUser;
+}
+
+exports.DeleteUser = async (userId) => {
+    await userRepository.deleteUser(userId);
+    return null;
+}
+
+exports.GetUserById = async (userId) => {
+    const user = await userRepository.getUserById(userId);
+    return user;
+}
+
+exports.GetAllUsers = async () => {
+    return await userRepository.getAllUsers();
+}
+
 
 

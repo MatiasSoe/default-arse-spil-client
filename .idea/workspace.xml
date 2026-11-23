@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="Opsat struktur">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FillDatabaseWithGames/seedGames.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="Opsat Database fill af spil">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Middelware/validateCreateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middelware/validateCreateUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Validators/userValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validators/userValidator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -43,62 +52,65 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="6.352191144093901E-66" />
-      <entry key="S2" value="5.092821719302177E-17" />
-      <entry key="S5" value="3.5768072542266435E-7" />
-      <entry key="S10" value="7.852724512418606E-4" />
-      <entry key="S30" value="0.14370039507068041" />
-      <entry key="S60" value="0.5434879834087873" />
-      <entry key="M2" value="1.2213378355862938" />
-      <entry key="M5" value="2.821085737079619" />
-      <entry key="M10" value="4.261616332227838" />
-      <entry key="M15" value="4.980848115992362" />
-      <entry key="M30" value="5.87684553837106" />
-      <entry key="H1" value="6.406319342920152" />
-      <entry key="H2" value="6.694613187012793" />
-      <entry key="H4" value="6.845100933349577" />
-      <entry key="D1" value="6.973871092719261" />
-      <entry key="W1" value="6.996259568143979" />
+      <entry key="MS100" value="6.714380344243034E-66" />
+      <entry key="MS500" value="9.234718536341002E-14" />
+      <entry key="S2" value="5.981557466378583E-4" />
+      <entry key="S5" value="0.07204800936953812" />
+      <entry key="S10" value="0.5400903130361959" />
+      <entry key="S30" value="5.419969805075183" />
+      <entry key="S60" value="13.51873722287405" />
+      <entry key="M2" value="26.854106026579743" />
+      <entry key="M5" value="54.78554012166944" />
+      <entry key="M10" value="89.67468170819846" />
+      <entry key="M15" value="115.08529905815567" />
+      <entry key="M30" value="156.96566748508528" />
+      <entry key="H1" value="187.97187203422314" />
+      <entry key="H2" value="207.03022553867322" />
+      <entry key="H4" value="217.62201649997735" />
+      <entry key="D1" value="227.0463958655299" />
+      <entry key="W1" value="228.7194747251485" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0000034852655184" />
-      <entry key="S60" value="1.0018668865842584" />
-      <entry key="M2" value="1.0432074829660138" />
-      <entry key="M5" value="1.284592589270663" />
-      <entry key="M10" value="1.5334722010289412" />
-      <entry key="M15" value="1.6577707072638486" />
-      <entry key="M30" value="1.8110306450830622" />
-      <entry key="H1" value="1.9005723985794045" />
-      <entry key="H2" value="1.9489849306387352" />
-      <entry key="H4" value="1.9741585757148241" />
-      <entry key="D1" value="1.9956459763898942" />
-      <entry key="W1" value="1.999376832824383" />
+      <entry key="S2" value="1.0000000009698653" />
+      <entry key="S5" value="1.000371799373656" />
+      <entry key="S10" value="1.027216619161686" />
+      <entry key="S30" value="1.5012244436047002" />
+      <entry key="S60" value="2.337481289980815" />
+      <entry key="M2" value="3.9291483568925756" />
+      <entry key="M5" value="7.126625146644122" />
+      <entry key="M10" value="10.90333242035278" />
+      <entry key="M15" value="13.639627057524473" />
+      <entry key="M30" value="18.16452115000807" />
+      <entry key="H1" value="21.529395176459467" />
+      <entry key="H2" value="23.6036356649912" />
+      <entry key="H4" value="24.758259871328065" />
+      <entry key="D1" value="25.78669094264228" />
+      <entry key="W1" value="25.969367595635003" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.88328286481819E-4" />
-      <entry key="MS500" value="0.19587429673733517" />
-      <entry key="S2" value="0.665264520540343" />
-      <entry key="S5" value="0.8495675707322811" />
-      <entry key="S10" value="0.922501702930415" />
-      <entry key="S30" value="1.116692860750437" />
-      <entry key="S60" value="1.531356553547473" />
-      <entry key="M2" value="2.256184172904172" />
-      <entry key="M5" value="4.099621680507799" />
-      <entry key="M10" value="5.790655232874929" />
-      <entry key="M15" value="6.635187804465129" />
-      <entry key="M30" value="7.685863808863796" />
-      <entry key="H1" value="8.305797882825082" />
-      <entry key="H2" value="8.643027343174198" />
-      <entry key="H4" value="8.818967902406607" />
-      <entry key="D1" value="8.969467581430543" />
-      <entry key="W1" value="8.995629309285391" />
+      <entry key="MS100" value="8.714975836080549E-7" />
+      <entry key="MS500" value="0.0613837247040025" />
+      <entry key="S2" value="0.49823335386357476" />
+      <entry key="S5" value="0.821968864434372" />
+      <entry key="S10" value="1.4088062202585458" />
+      <entry key="S30" value="6.777475434774667" />
+      <entry key="S60" value="15.694340214169742" />
+      <entry key="M2" value="30.625199293106437" />
+      <entry key="M5" value="61.79024942526658" />
+      <entry key="M10" value="100.48313345164637" />
+      <entry key="M15" value="128.64587865942207" />
+      <entry key="M30" value="175.07799748971678" />
+      <entry key="H1" value="209.47057341436533" />
+      <entry key="H2" value="230.61711496165248" />
+      <entry key="H4" value="242.37151630350854" />
+      <entry key="D1" value="252.8315695852032" />
+      <entry key="W1" value="254.68862412598295" />
     </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6,
@@ -118,7 +130,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Issue-#1-Profil---Opret-en-bruger",
     "javascript.nodejs.core.library.configured.version": "24.21.0",
     "javascript.nodejs.core.library.typings.version": "24.19.2",
     "javascript.preferred.runtime.type.id": "node",
@@ -129,13 +141,15 @@
     "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "C:/Users/Matia/AppData/Roaming/JetBrains/WebStorm2026.2/node/versions/24.21.0/node",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2026.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-WS-263.7307.202" />
       </set>
     </attachedChunks>
   </component>
@@ -148,7 +162,17 @@
       <updated>1794823567332</updated>
       <workItem from="1794823568324" duration="5230000" />
       <workItem from="1795084392323" duration="217000" />
-      <workItem from="1795426202193" duration="764000" />
+      <workItem from="1795426202193" duration="2474000" />
+      <workItem from="1795429030452" duration="435000" />
+      <workItem from="1795429484288" duration="409000" />
+      <workItem from="1795429929572" duration="425000" />
+      <workItem from="1795430366325" duration="30000" />
+      <workItem from="1795430421735" duration="379000" />
+      <workItem from="1795430868569" duration="878000" />
+      <workItem from="1795431854422" duration="85000" />
+      <workItem from="1795432369532" duration="12000" />
+      <workItem from="1795433910472" duration="26000" />
+      <workItem from="1795435895385" duration="2087000" />
     </task>
     <task id="LOCAL-00001" summary="Opsat struktur">
       <option name="closed" value="true" />
@@ -174,14 +198,26 @@
       <option name="project" value="LOCAL" />
       <updated>1794905805807</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Opsat Database fill af spil">
+      <option name="closed" value="true" />
+      <created>1795428383718</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1795428383718</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Opsat struktur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opsat struktur" />
+    <MESSAGE value="Opsat Database fill af spil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opsat Database fill af spil" />
   </component>
 </project>
