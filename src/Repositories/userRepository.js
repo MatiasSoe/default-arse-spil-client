@@ -1,0 +1,24 @@
+const User = require('../Models/userModel');
+
+exports.createUser = async (user) => {
+    return await User.create(user);
+}
+
+exports.getAllUsers = async () => {
+    return await User.find()
+}
+
+exports.getUserById = async (id) => {
+    return await User.findById(id)
+}
+
+exports.updateUser = async (id, user) => {
+    return await User.findByIdAndUpdate(id, user, { new: true })
+}
+
+exports.deleteUser = async (id) => {
+    return await User.findByIdAndDelete(id)
+}
+
+
+
