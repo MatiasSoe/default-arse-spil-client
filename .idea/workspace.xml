@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="Opsat Database fill af spil">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Middelware/validateCreateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middelware/validateCreateUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/userRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/userService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Validators/userValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validators/userValidator.js" afterDir="false" />
-    </list>
+    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="Lavet create user igenem lagende  model,repository,service,controller,route" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,61 +43,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="6.714380344243034E-66" />
-      <entry key="MS500" value="9.234718536341002E-14" />
-      <entry key="S2" value="5.981557466378583E-4" />
-      <entry key="S5" value="0.07204800936953812" />
-      <entry key="S10" value="0.5400903130361959" />
-      <entry key="S30" value="5.419969805075183" />
-      <entry key="S60" value="13.51873722287405" />
-      <entry key="M2" value="26.854106026579743" />
-      <entry key="M5" value="54.78554012166944" />
-      <entry key="M10" value="89.67468170819846" />
-      <entry key="M15" value="115.08529905815567" />
-      <entry key="M30" value="156.96566748508528" />
-      <entry key="H1" value="187.97187203422314" />
-      <entry key="H2" value="207.03022553867322" />
-      <entry key="H4" value="217.62201649997735" />
-      <entry key="D1" value="227.0463958655299" />
-      <entry key="W1" value="228.7194747251485" />
+      <entry key="MS100" value="1.0228668001388663" />
+      <entry key="MS500" value="1.8071141606058363" />
+      <entry key="S2" value="3.286406642240497" />
+      <entry key="S5" value="5.124491431202986" />
+      <entry key="S10" value="8.262320393971187" />
+      <entry key="S30" value="15.223998306580349" />
+      <entry key="S60" value="19.761585285543536" />
+      <entry key="M2" value="28.75340948112364" />
+      <entry key="M5" value="56.021446323021785" />
+      <entry key="M10" value="93.1637071698302" />
+      <entry key="M15" value="120.85140089375314" />
+      <entry key="M30" value="167.81770025952076" />
+      <entry key="H1" value="203.57263401832617" />
+      <entry key="H2" value="225.91988431095382" />
+      <entry key="H4" value="238.45219320544874" />
+      <entry key="D1" value="249.66770625780532" />
+      <entry key="W1" value="251.66494306371683" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000009698653" />
-      <entry key="S5" value="1.000371799373656" />
-      <entry key="S10" value="1.027216619161686" />
-      <entry key="S30" value="1.5012244436047002" />
-      <entry key="S60" value="2.337481289980815" />
-      <entry key="M2" value="3.9291483568925756" />
-      <entry key="M5" value="7.126625146644122" />
-      <entry key="M10" value="10.90333242035278" />
-      <entry key="M15" value="13.639627057524473" />
-      <entry key="M30" value="18.16452115000807" />
-      <entry key="H1" value="21.529395176459467" />
-      <entry key="H2" value="23.6036356649912" />
-      <entry key="H4" value="24.758259871328065" />
-      <entry key="D1" value="25.78669094264228" />
-      <entry key="W1" value="25.969367595635003" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="8.357154809838637E-125" />
+      <entry key="S2" value="9.561248641500457E-32" />
+      <entry key="S5" value="3.911715718012308E-13" />
+      <entry key="S10" value="6.423399883724072E-7" />
+      <entry key="S30" value="0.012837484570660465" />
+      <entry key="S60" value="0.21615500554954545" />
+      <entry key="M2" value="1.1948324366758456" />
+      <entry key="M5" value="4.42677396095941" />
+      <entry key="M10" value="8.593319682672105" />
+      <entry key="M15" value="11.637784366546239" />
+      <entry key="M30" value="16.778682601536136" />
+      <entry key="H1" value="20.69182429615768" />
+      <entry key="H2" value="23.139948002943054" />
+      <entry key="H4" value="24.51386868032621" />
+      <entry key="D1" value="25.7440915729407" />
+      <entry key="W1" value="25.963234516385768" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="8.714975836080549E-7" />
-      <entry key="MS500" value="0.0613837247040025" />
-      <entry key="S2" value="0.49823335386357476" />
-      <entry key="S5" value="0.821968864434372" />
-      <entry key="S10" value="1.4088062202585458" />
-      <entry key="S30" value="6.777475434774667" />
-      <entry key="S60" value="15.694340214169742" />
-      <entry key="M2" value="30.625199293106437" />
-      <entry key="M5" value="61.79024942526658" />
-      <entry key="M10" value="100.48313345164637" />
-      <entry key="M15" value="128.64587865942207" />
-      <entry key="M30" value="175.07799748971678" />
-      <entry key="H1" value="209.47057341436533" />
-      <entry key="H2" value="230.61711496165248" />
-      <entry key="H4" value="242.37151630350854" />
-      <entry key="D1" value="252.8315695852032" />
-      <entry key="W1" value="254.68862412598295" />
+      <entry key="MS100" value="0.9360635833940827" />
+      <entry key="MS500" value="1.7833900861106895" />
+      <entry key="S2" value="3.2766048704519894" />
+      <entry key="S5" value="5.118791286058228" />
+      <entry key="S10" value="8.257990375876451" />
+      <entry key="S30" value="15.233067701241879" />
+      <entry key="S60" value="19.961235462528993" />
+      <entry key="M2" value="29.899327564919467" />
+      <entry key="M5" value="60.37212830293225" />
+      <entry key="M10" value="101.68206252649485" />
+      <entry key="M15" value="132.42161486370173" />
+      <entry key="M30" value="184.54811087884258" />
+      <entry key="H1" value="224.23492715602313" />
+      <entry key="H2" value="249.04339928828853" />
+      <entry key="H4" value="262.95738040251734" />
+      <entry key="D1" value="275.4102817987201" />
+      <entry key="W1" value="277.6279592488798" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -172,7 +163,7 @@
       <workItem from="1795431854422" duration="85000" />
       <workItem from="1795432369532" duration="12000" />
       <workItem from="1795433910472" duration="26000" />
-      <workItem from="1795435895385" duration="2087000" />
+      <workItem from="1795435895385" duration="2402000" />
     </task>
     <task id="LOCAL-00001" summary="Opsat struktur">
       <option name="closed" value="true" />
@@ -206,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1795428383718</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Lavet create user igenem lagende  model,repository,service,controller,route">
+      <option name="closed" value="true" />
+      <created>1795438129614</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1795438129614</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +217,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Opsat struktur" />
     <MESSAGE value="Opsat Database fill af spil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opsat Database fill af spil" />
+    <MESSAGE value="Lavet create user igenem lagende  model,repository,service,controller,route" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lavet create user igenem lagende  model,repository,service,controller,route" />
   </component>
 </project>
