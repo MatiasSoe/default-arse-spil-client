@@ -1,13 +1,14 @@
 const userRepository = require('../Repositories/userRepository');
 const AppError = require('../utils/AppError');
 
-exports.CreateUser = async (newUserData) => {
+// CreateUser rykket til accountService.js.
+/*exports.CreateUser = async (newUserData) => {
     const newUser = await userRepository.createUser(newUserData);
     if (!newUser) {
         throw new AppError('Karakteren blev ikke oprettet');
     }
     return newUser;
-}
+}*/
 
 exports.UpdateUser = async (newUserData, id) => {
     const updatedUser = await userRepository.updateUser(newUserData, id);

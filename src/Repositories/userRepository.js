@@ -20,5 +20,12 @@ exports.deleteUser = async (id) => {
     await User.findByIdAndDelete(id)
 }
 
+exports.getUserByEmail = async (email) => {
+    return await User.findOne({ email: email.toLowerCase()}); 
+}
+
+exports.getUserByEmailWithPassword = async (email) => {
+    return await User.findOne({ email: email.toLowerCase()}).select('+password') // This will include the password field in the result
+}
 
 
