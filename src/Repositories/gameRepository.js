@@ -9,8 +9,8 @@ const findById = async () => {
     return await Game.findOne ({ id: Number(id) });
 };
 
-const findByGenre = async () => {
-    return await game.find({ genre });
+const findByGenre = async (genre) => {
+    return await Game.find({ genre });
 };
 
 module.exports = {

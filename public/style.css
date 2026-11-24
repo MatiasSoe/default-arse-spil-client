@@ -1,8 +1,434 @@
+/* ===== RESET & FARVEVARIABLER ===== */
 :root {
-    --blue-brand-color: #0C8ABB;
-    --ambient-brand-color: #1E2734;
-    --dark-background-color: #121418;
-    --text-color: white;
-    --txtFont-brand-font: 'calibri', sans-serif;
-    --headingFont-brand-font: 'calibri', serif;
+    --bg-main: #0f1219;
+    --bg-surface: #171c28;
+    --bg-surface-hover: #1e2536;
+    --bg-input: #0c0f15;
+    --border-color: #262f42;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent-primary: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-secondary: #06b6d4;
+    --accent-green: #10b981;
+    --accent-green-hover: #059669;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ===== DAMP LOGO (2 OVERLAPPENDE CIRKLER) ===== */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+}
+
+.logo-circles {
+    position: relative;
+    width: 38px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-circles::before,
+.logo-circles::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.logo-circles::before {
+    left: 0;
+    background-color: var(--accent-primary);
+    opacity: 0.9;
+}
+
+.logo-circles::after {
+    right: 0;
+    background-color: var(--accent-secondary);
+    opacity: 0.85;
+    mix-blend-mode: screen;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--text-primary);
+}
+
+/* ===== DESKTOP VINDUESKNAPPER ===== */
+.window-controls {
+    position: fixed;
+    top: 14px;
+    right: 18px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+}
+
+.window-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: #2d3748;
+    cursor: pointer;
+}
+
+.window-btn:hover {
+    background-color: var(--text-secondary);
+}
+
+.window-btn.close:hover {
+    background-color: #ef4444;
+}
+
+/* ===== LOGIN & OPRET BRUGER ===== */
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: radial-gradient(circle at top, #1b2438 0%, var(--bg-main) 60%);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.12);
+}
+
+.auth-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: -4px;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.link-subtle {
+    color: var(--accent-primary);
+}
+
+.link-subtle:hover {
+    text-decoration: underline;
+}
+
+.auth-divider {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin: 18px 0;
+    position: relative;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.auth-divider::before { left: 0; }
+.auth-divider::after { right: 0; }
+
+.auth-footer {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ===== KNAPPER ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s, transform 0.15s, border-color 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), #2563eb);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-surface-hover);
+    border-color: var(--text-secondary);
+}
+
+.btn-credits {
+    background-color: var(--accent-green);
+    color: #ffffff;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+}
+
+.btn-credits:hover {
+    background-color: var(--accent-green-hover);
+}
+
+/* ===== HEADER NAVIGATION ===== */
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--accent-primary);
+}
+
+/* ===== HOVEDINDHOLD ===== */
+.main-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.page-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* ===== SPILKORT & BIBLIOTEK GRID ===== */
+.library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 22px;
+}
+
+.game-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-primary);
+}
+
+.game-cover {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background-color: var(--bg-input);
+    background-size: cover;
+    background-position: center;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 18, 25, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.game-card:hover .cover-overlay {
+    opacity: 1;
+}
+
+.game-info {
+    padding: 12px 14px;
+}
+
+.game-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.game-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+/* ===== STORE BANNER & NETFLIX-RÆKKER ===== */
+.store-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 18px 24px;
+    margin-bottom: 32px;
+}
+
+.store-banner h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.store-category {
+    margin-bottom: 32px;
+}
+
+.category-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.store-row {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+
+.store-row::-webkit-scrollbar {
+    display: none;
+}
+
+.store-card {
+    flex: 0 0 155px;
+}
+
+.store-card .game-info {
+    padding: 10px 12px;
+}
+
+.store-price {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-secondary);
+    margin-top: 4px;
 }
