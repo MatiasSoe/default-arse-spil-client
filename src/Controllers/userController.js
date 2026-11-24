@@ -1,14 +1,14 @@
 const userService = require('../Services/userService');
 
 
-exports.handleCreateUser = async (req, res) => {
+/* exports.handleCreateUser = async (req, res) => {
     try {
         const createUser = await userService.CreateUser(req.body);
         return res.status(201).json({createUser});
     } catch (error) {
         res.status(404).json({error: error.message});
     }
-}
+} */
 
 
 exports.handleGetAllUsers = async (req, res) => {

@@ -14,11 +14,12 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use('/api/users', userRouter);
 app.use('/api/games', gameRouter);
+app.use('/api/account', accountRoutes);
+
 
 app.use(express.static("public/static"))
 app.use(express.static("public"));
 
-app.use('/account', accountRoutes);
 app.use('/profile', profileRoutes);
 
 
