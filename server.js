@@ -1,6 +1,8 @@
 const app = require('./src/app');
 const connectDB = require('./src/config/database');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
+const mongoose = require('mongoose')
+
 
 const start = async () => {
     await connectDB();
@@ -16,6 +18,7 @@ void start().catch((error) => {
     console.error('Serveren kunne ikke starte:', error.message);
     process.exitCode = 1; // Valgfrit - sikre serveren ikke starter, hvis der ikke er forbindelse til databasen
 });
+
 
 
 

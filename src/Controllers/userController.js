@@ -1,8 +1,9 @@
-const userSerive = require('../Services/userService');
+const userService = require('../Services/userService');
 
-exports.handleCreateuser = async (req, res) => {
+
+exports.handleCreateUser = async (req, res) => {
     try {
-        const createUser = await userSerive.CreateUser(req.body);
+        const createUser = await userService.CreateUser(req.body);
         return res.status(201).json({createUser});
     } catch (error) {
         res.status(404).json({error: error.message});
@@ -12,7 +13,7 @@ exports.handleCreateuser = async (req, res) => {
 
 exports.handleGetAllUsers = async (req, res) => {
     try {
-        const users = await userSerive.GetAllUsers();
+        const users = await userService.GetAllUsers();
         res.status(200).json({
             data: users
         })
@@ -25,7 +26,7 @@ exports.handleGetAllUsers = async (req, res) => {
 
 exports.handleGetUserById = async (req, res) => {
     try {
-        const user = await userSerive.GetUserById(req.params.id);
+        const user = await userService.GetUserById(req.params.id);
         return res.status(200).json({user})
     } catch (error) {
         res.status(404).json({error: error.message})
@@ -34,7 +35,7 @@ exports.handleGetUserById = async (req, res) => {
 
 exports.handleUpdateUser = async (req, res) => {
     try {
-        const updateUser = await userSerive.UpdateUser(req.body);
+        const updateUser = await userService.UpdateUser(req.body, req.params.id);
         return res.status(201).json({updateUser});//200 eller 201?
     } catch (error) {
         res.status(404).json({error: error.message})
@@ -43,8 +44,8 @@ exports.handleUpdateUser = async (req, res) => {
 
 exports.handleDeleteUser = async (req, res) => {
     try {
-        await userSerive.DeleteUser(req.params.id);
-        return res.status(204)
+        await userService.DeleteUser(req.params.id);
+        return res.status(204).json({message: "hej"})
     } catch (error) {
         res.status(404).json({error: error.message})
     }

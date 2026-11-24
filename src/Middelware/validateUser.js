@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const AppError = require('../utils/AppError')
 
 
 function validateUserData(req, res, next) {
-    const name = req.body?.name?.trim();
+    const name = req.body?.username?.trim();
     const email = req.body?.email?.trim();
     const password = req.body?.password.trim();
 
@@ -48,14 +49,14 @@ function validateUserData(req, res, next) {
         })
     }
 
-    req.body.name = name;
+    req.body.username = name;
     req.body.email = email;
     req.body.password = password
     next(); // fortsæt til næste middleware eller controller
 }
 
 function validateId(req, res, next) {
-    if (!mongoose.isObjectIdOrHexString(req.body.id)) {
+    if (!mongoose.isObjectIdOrHexString(req.params.id)) {
         return next(new AppError('Ugyldigt ID'))
     }
     next()

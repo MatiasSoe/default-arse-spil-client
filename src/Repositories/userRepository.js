@@ -12,12 +12,12 @@ exports.getUserById = async (id) => {
     return await User.findById(id)
 }
 
-exports.updateUser = async (id, user) => {
-    return await User.findByIdAndUpdate(id, user, { new: true })
+exports.updateUser = async (userData, id) => {
+    return await User.findByIdAndUpdate(id, userData, {returnDocument: 'after'})
 }
 
 exports.deleteUser = async (id) => {
-    return await User.findByIdAndDelete(id)
+    await User.findByIdAndDelete(id)
 }
 
 
