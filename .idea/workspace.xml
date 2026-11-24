@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="tilføjet AppError i userService">
+    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Middelware/validateCreateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middelware/validateUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/userRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,60 +46,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000104875971223" />
-      <entry key="S5" value="1.0150416958524051" />
-      <entry key="S10" value="1.3408451760253433" />
-      <entry key="S30" value="7.309844558090906" />
-      <entry key="S60" value="17.869088087150704" />
-      <entry key="M2" value="33.33034457620339" />
-      <entry key="M5" value="57.49040999614675" />
-      <entry key="M10" value="73.31116199988276" />
-      <entry key="M15" value="80.29186998105239" />
-      <entry key="M30" value="88.43629140317668" />
-      <entry key="H1" value="93.02279806477026" />
-      <entry key="H2" value="95.77619174972307" />
-      <entry key="H4" value="106.38549262322802" />
-      <entry key="D1" value="265.11823850682663" />
-      <entry key="W1" value="370.806336241037" />
+      <entry key="MS500" value="1.0000559937353855" />
+      <entry key="S2" value="1.1067320150010063" />
+      <entry key="S5" value="1.7107895123085344" />
+      <entry key="S10" value="2.88491681029793" />
+      <entry key="S30" value="8.528764513405452" />
+      <entry key="S60" value="15.438443253919326" />
+      <entry key="M2" value="28.45561690701238" />
+      <entry key="M5" value="57.89527702021245" />
+      <entry key="M10" value="81.64777972844142" />
+      <entry key="M15" value="93.02127969049315" />
+      <entry key="M30" value="106.90759166829697" />
+      <entry key="H1" value="115.00222065560229" />
+      <entry key="H2" value="119.69079313360521" />
+      <entry key="H4" value="131.2301303928322" />
+      <entry key="D1" value="290.6554779860993" />
+      <entry key="W1" value="396.7145355269054" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.9445164181549614E-36" />
-      <entry key="MS500" value="7.207135090876435E-8" />
-      <entry key="S2" value="0.016872045680289677" />
-      <entry key="S5" value="0.2404268392478441" />
-      <entry key="S10" value="0.658642088388064" />
-      <entry key="S30" value="1.50348549036585" />
-      <entry key="S60" value="2.2565151875656437" />
-      <entry key="M2" value="3.5035471532084155" />
-      <entry key="M5" value="5.989609210679027" />
-      <entry key="M10" value="7.861184713600219" />
-      <entry key="M15" value="8.726626068254156" />
-      <entry key="M30" value="9.759883715364337" />
-      <entry key="H1" value="10.351313687666103" />
-      <entry key="H2" value="10.696242699675375" />
-      <entry key="H4" value="11.70334735222557" />
-      <entry key="D1" value="26.204760020444333" />
-      <entry key="W1" value="35.87603007871642" />
+      <entry key="MS100" value="3.451E-320" />
+      <entry key="MS500" value="1.281113301233944E-64" />
+      <entry key="S2" value="1.063974118013131E-16" />
+      <entry key="S5" value="4.199837144512803E-7" />
+      <entry key="S10" value="8.232319148223992E-4" />
+      <entry key="S30" value="0.25020272743756056" />
+      <entry key="S60" value="1.3528926972419106" />
+      <entry key="M2" value="3.6451860324106007" />
+      <entry key="M5" value="7.967561597950233" />
+      <entry key="M10" value="11.230411880936005" />
+      <entry key="M15" value="12.779466111056713" />
+      <entry key="M30" value="14.669603062877846" />
+      <entry key="H1" value="15.77243158994834" />
+      <entry key="H2" value="16.397144170910178" />
+      <entry key="H4" value="17.54288692460516" />
+      <entry key="D1" value="32.1532988041931" />
+      <entry key="W1" value="41.866326651492166" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2205098451192212E-35" />
-      <entry key="MS500" value="1.095961425127916E-7" />
-      <entry key="S2" value="0.02694250811094723" />
-      <entry key="S5" value="0.4050741435941052" />
-      <entry key="S10" value="1.3693179924426913" />
-      <entry key="S30" value="8.473061964567316" />
-      <entry key="S60" value="19.877796306397546" />
-      <entry key="M2" value="36.6438192728229" />
-      <entry key="M5" value="63.352113135126345" />
-      <entry key="M10" value="81.08895424546921" />
-      <entry key="M15" value="88.9569153410083" />
-      <entry key="M30" value="98.16181401571917" />
-      <entry key="H1" value="103.35590985240354" />
-      <entry key="H2" value="106.4630402377066" />
-      <entry key="H4" value="118.08377600982877" />
-      <entry key="D1" value="291.3213054840871" />
-      <entry key="W1" value="406.68204375656865" />
+      <entry key="MS100" value="0.0012360904237991017" />
+      <entry key="MS500" value="0.2620658413391266" />
+      <entry key="S2" value="0.7556802130387555" />
+      <entry key="S5" value="1.4184059081107663" />
+      <entry key="S10" value="2.661689561425541" />
+      <entry key="S30" value="8.645544722703036" />
+      <entry key="S60" value="16.665153215497913" />
+      <entry key="M2" value="31.966673964716502" />
+      <entry key="M5" value="65.74194990691213" />
+      <entry key="M10" value="92.7891238796497" />
+      <entry key="M15" value="105.73195763391776" />
+      <entry key="M30" value="121.5369568098189" />
+      <entry key="H1" value="130.7528077831247" />
+      <entry key="H2" value="136.07652584874884" />
+      <entry key="H4" value="148.7668957597887" />
+      <entry key="D1" value="322.80690102228095" />
+      <entry key="W1" value="438.5805131603952" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -117,31 +114,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.seedGames.js.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Issue-#1-Profil---Opret-en-bruger",
-    "javascript.nodejs.core.library.configured.version": "24.21.0",
-    "javascript.nodejs.core.library.typings.version": "24.19.2",
-    "javascript.preferred.runtime.type.id": "node",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "C:/Users/Matia/AppData/Roaming/JetBrains/WebStorm2026.2/node/versions/24.21.0/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2026.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.seedGames.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Issue-#1-Profil---Opret-en-bruger&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;24.21.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;24.19.2&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;C:/Users/Matia/AppData/Roaming/JetBrains/WebStorm2026.2/node/versions/24.21.0/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2026.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -168,7 +165,8 @@
       <workItem from="1795431854422" duration="85000" />
       <workItem from="1795432369532" duration="12000" />
       <workItem from="1795433910472" duration="26000" />
-      <workItem from="1795435895385" duration="3694000" />
+      <workItem from="1795435895385" duration="3955000" />
+      <workItem from="1795508545329" duration="311000" />
     </task>
     <task id="LOCAL-00001" summary="Opsat struktur">
       <option name="closed" value="true" />
@@ -218,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1795438513879</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController.">
+      <option name="closed" value="true" />
+      <created>1795508463818</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1795508463818</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +238,7 @@
     <MESSAGE value="Opsat Database fill af spil" />
     <MESSAGE value="Lavet create user igenem lagende  model,repository,service,controller,route" />
     <MESSAGE value="tilføjet AppError i userService" />
-    <option name="LAST_COMMIT_MESSAGE" value="tilføjet AppError i userService" />
+    <MESSAGE value="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController." />
+    <option name="LAST_COMMIT_MESSAGE" value="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController." />
   </component>
 </project>
