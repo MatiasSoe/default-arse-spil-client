@@ -6,18 +6,40 @@
     <link rel="stylesheet" href="../style.css">
     <script type="text/javascript" src="../register.js" defer></script>
 </head>
-<body>
-    <section class="register">
-        <label for="email">E-MAIL</label>
-        <input type="text" id="email" name="email" placeholder="din@email.dk">
-        <label for="username">BRUGERNAVN</label>
-        <input type="text" id="username" name="username" placeholder="Vælg et brugernavn">
-        <label for="password">ADGANGSKODE</label>
-        <input type="password" id="password" name="password" placeholder="********">
-        <label for="password-repeat">GENTAG PASSWORD</label>
-        <input type="password" id="password-repeat" name="password" placeholder="********">
-        <button type="submit">Opret bruger</button>
-        <p>Har du allerede en konto? <a href="login.html">Log ind</a></p>
-    </section>
+<body class="auth-page">
+    <main class="auth-card">
+        <div class="auth-header">
+            <div class="logo">
+                <span class="logo-circles"></span>
+                <span class="logo-text">DAMP</span>
+            </div>
+        </div>
+        <p class="auth-details">Opret ny konto</p>
+
+
+        <form class="auth-form">
+            <div class="form-group">
+                <label for="email">E-MAIL</label>
+                <input type="text" id="email" name="email" placeholder="din@email.dk">
+            </div>
+            <div class="form-group">
+                <label for="username">BRUGERNAVN</label>
+                <input type="text" id="username" name="username" placeholder="Vælg et brugernavn">
+            </div>
+            <div class="form-group">
+                <label for="password">ADGANGSKODE</label>
+                <input type="password" id="password" name="password" placeholder="********">
+            </div>
+            <div class="form-group">
+                <label for="password-repeat">GENTAG PASSWORD</label>
+                <input type="password" id="password-repeat" name="passwordRepeat" placeholder="********">
+            </div>
+            <button type="submit" class="btn btn-primary">Opret bruger</button>
+        </form>
+        <div class="auth-divider">eller</div>
+        <div class="auth-footer">
+            Har du allerede en konto? <a href="/login.html" class="link-subtle">Log ind</a>
+        </div>
+    </main>
 </body>
 </html>
