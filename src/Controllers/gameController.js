@@ -11,7 +11,7 @@ exports.handleGetAllGames = async (req, res, next) => {
 
 exports.getStoreGames = async (req, res, next) => {
     try {
-        const games = await gameService.getStoreGames();
+        const games = await gameService.getGamesGroupedByGenre();
         res.status(200).json(games);
     } catch (error) {
         next(error);
