@@ -17,11 +17,8 @@ const gameSchema = new mongoose.Schema(
         developer: String,
         release_date: String,
         freetogame_profile_url: String,
-    },
-    {
-        // Tvinger Mongoose til at bruge præcis 'Games' (med stort G) i stedet for 'games'
-        collection: 'games',
     }
+
 );
 
 const Game = mongoose.model('Game', gameSchema);
