@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Client-side validation example
         if (password !== passwordRepeat) {
-            alert("Passwords matcher ikke");
+            alert("Adgangskoderne er ikke ens");
             return;
         }
 
