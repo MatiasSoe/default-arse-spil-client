@@ -1,11 +1,12 @@
 require('dotenv').config();
 const app = require('./src/app');
 const connectDB = require('./src/config/database');
+const { assertJwtSecretConfigured } = require('./src/config/auth');
 const PORT = process.env.PORT || 3000;
-const mongoose = require('mongoose')
 
 
 const start = async () => {
+    assertJwtSecretConfigured();
     await connectDB();
     app.listen(PORT, () => {
         console.log(`Serveren kører på http://localhost:${PORT}`);
@@ -19,7 +20,6 @@ void start().catch((error) => {
     console.error('Serveren kunne ikke starte:', error.message);
     process.exitCode = 1; // Valgfrit - sikre serveren ikke starter, hvis der ikke er forbindelse til databasen
 });
-
 
 
 
