@@ -7,9 +7,54 @@
     <script type="text/javascript" src="../app.js" defer></script>
 </head>
 <body>
-    <h1>Velkommen til DAMP</h1>
-    <h3>Her kan du finde alle de <strong>bedste</strong> spil til din computer!</h3>
-    <p>Hvis du allerede har en bruger, kan du trykke <a href="login.html">her</a> for at logge ind.
-        Ønsker du derimod at oprette dig som en ny bruger, kan du gøre det <a href="register.html">her</a></p>
+    <header class="top-header">
+        <a href="/index.html" class="logo">
+            <span class="logo-circles"></span>
+            <span class="logo-text">DAMP</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#" class="nav-link active">Velkommen</a>
+            <a href="/register.html" class="nav-link">Opret bruger</a>
+            <a href="/login.html" class="nav-link">Log ind</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="hero-section">
+            <div class="hero-badge">Din nye spilplatform</div>
+            <h1 class="hero-title">Velkommen til <span>DAMP</span></h1>
+            <p class="hero-description">
+                DAMP er en nytænkt spilplatform, for hvorfor skal man ikke også kunne eje et spil, man køber online?
+                Når du køber et spil på vores platform, så køber du ikke kun en licens til det.
+                Du ejer det på samme måde, som hvis det var en fysisk kopi!
+                DAMP er en minimalistisk spilclient bygget til gamere, der bare vil i gang.
+                Udforsk vores voksende katalog i Game-Store, saml alle dine favoritspil i dit
+                personlige bibliotek, og hold styr på dine credits ét samlet sted.
+            </p>
+
+            <div class="hero-actions">
+                <a href="/register.html" class="btn btn-primary">Opret gratis bruger</a>
+                <a href="/login.html" class="btn btn-secondary">Log ind</a>
+            </div>
+        </section>
+        <section class="features-grid">
+            <article class="feature-card">
+                <h3>Stort spilkatalog</h3>
+                <p>Gå på opdagelse i vores Game-Store opdelt i overskuelige genrer – fra intense shooters til dybe MMORPG'er.</p>
+            </article>
+
+            <article class="feature-card">
+                <h3>Dit eget bibliotek</h3>
+                <p>Alle dine købte spil samles automatisk i dit personlige bibliotek, så du altid er ét klik fra at spille.
+                    Og du <strong><em>ejer</em></strong> det, du køber!</p>
+            </article>
+
+            <article class="feature-card">
+                <h3>Simpelt &amp; hurtigt</h3>
+                <p>Ingen unødig støj eller tunge menuer. Kun et rent, mørkt design med fokus på dine spil og credits.</p>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

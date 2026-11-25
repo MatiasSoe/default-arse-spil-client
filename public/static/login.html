@@ -6,7 +6,23 @@
     <link rel="stylesheet" href="../style.css">
     <script type="text/javascript" src="../login.js" defer></script>
 </head>
-<body class="auth-page">
+<body>
+
+<header class="top-header">
+    <a href="/index.html" class="logo">
+        <span class="logo-circles"></span>
+        <span class="logo-text">DAMP</span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="/index.html" class="nav-link">Velkommen</a>
+        <a href="/register.html" class="nav-link">Opret bruger</a>
+        <a href="/login.html" class="nav-link active">Log ind</a>
+    </nav>
+</header>
+
+<section class="auth-page">
+
     <main class="auth-card">
         <div class="auth-header">
             <div class="logo">
@@ -28,5 +44,6 @@
             <button type="button" onclick="window.location.href='register.html'" class="btn btn-secondary ">Opret bruger</button>
         </form>
     </main>
+</section>
 </body>
 </html>
