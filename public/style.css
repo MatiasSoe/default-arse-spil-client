@@ -82,32 +82,95 @@ a {
     color: var(--text-primary);
 }
 
-/* ===== DESKTOP VINDUESKNAPPER ===== */
-.window-controls {
-    position: fixed;
-    top: 14px;
-    right: 18px;
+/* ===== FORSIDE / VELKOMST (INDEX) ===== */
+.hero-section {
+    text-align: center;
+    margin: 48px auto 64px;
+    padding: 48px 32px;
+    background: radial-gradient(circle at top, #1b2438 0%, var(--bg-surface) 75%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.hero-badge {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-secondary);
+    background-color: rgba(6, 182, 212, 0.12);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.hero-title span {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.hero-actions {
     display: flex;
-    gap: 8px;
-    z-index: 100;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
-.window-btn {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background-color: #2d3748;
-    cursor: pointer;
+.hero-sublink {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
 }
 
-.window-btn:hover {
-    background-color: var(--text-secondary);
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
 }
 
-.window-btn.close:hover {
-    background-color: #ef4444;
+.feature-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
 }
+
+.feature-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-4px);
+}
+
+.feature-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 
 /* ===== LOGIN & OPRET BRUGER ===== */
 .auth-page {
@@ -389,7 +452,7 @@ a {
     margin-top: 4px;
 }
 
-/* ===== STORE BANNER & NETFLIX-RÆKKER ===== */
+/* ===== STORE BANNER & SPIL-RÆKKER ===== */
 .store-banner {
     display: flex;
     align-items: center;
