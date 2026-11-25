@@ -1,4 +1,9 @@
 const accountService = require('../Services/accountService');
+const authToken = require('../utils/authToken');
+const {
+    AUTH_COOKIE_NAME,
+    getAuthCookieOptions
+} = require('../config/auth');
 
 exports.handleRegister = async (req, res, next) => {
     try {
@@ -15,13 +20,27 @@ exports.handleRegister = async (req, res, next) => {
 exports.handleLogin = async (req, res, next) => {
     try {
         const user = await accountService.login(req.body);
-
-        // Når vi senere tilføjer express-session eller JWT-cookie,
-        // gemmes session/cookie her i controller-laget.
+        const token = authToken.createAccessToken(user.id);
+        res.cookie(AUTH_COOKIE_NAME, token, getAuthCookieOptions());
         res.status(200).json({
-            message: 'Login gennemført', // Postman response message
+            message: 'Login gennemført',
             user
         });
+    } catch (error) {
+        next(error);
+    }
+};
+
+exports.handleLogout = (_req, res) => {
+    const { maxAge, ...clearCookieOptions } = getAuthCookieOptions();
+    res.clearCookie(AUTH_COOKIE_NAME, clearCookieOptions);
+    res.status(200).json({ message: 'Logget ud' });
+};
+
+exports.handleCurrentUser = async (req, res, next) => {
+    try {
+        const user = await accountService.getAuthenticatedUser(req.auth.userId);
+        res.status(200).json({ user });
     } catch (error) {
         next(error);
     }

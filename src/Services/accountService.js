@@ -51,6 +51,14 @@ exports.login = async ({ email, password }) => {
     return toSafeUser(user);
 };
 
+exports.getAuthenticatedUser = async (userId) => {
+    const user = await userRepository.getUserById(userId);
+    if (!user) {
+        throw new AppError('Brugeren findes ikke længere', 401);
+    }
+
+    return toSafeUser(user);
+};
 
 
 
