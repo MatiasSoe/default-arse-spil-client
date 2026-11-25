@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Bruger oprettet!");
             console.log(data);
 
-            // Optional redirect
+            // Redirect til login
             window.location.href = "/login.html";
 
         } catch (error) {
