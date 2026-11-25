@@ -2,8 +2,12 @@ const express = require('express');
 const router = express.Router();
 const profileController = require('../Controllers/profileController');
 
+const authenticate = require('../Middelware/authenticate');
+const { validateId } = require('../Middelware/validateUser');
+const { validateUpdateDescription } = require('../Validators/profileValidator');
 
-router.get('/:id', profileController.getProfile);
-router.patch('/:id', profileController.updateProfile);
+router.get('/me', authenticate, profileController.handleGetMyProfile);
+router.patch('/me', authenticate, validateUpdateDescription, profileController.handleUpdateDescription);
+router.get('/:id', validateId, profileController.handleGetProfileById);
 
 module.exports = router;

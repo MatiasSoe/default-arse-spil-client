@@ -57,7 +57,7 @@ function validateUserData(req, res, next) {
 
 function validateId(req, res, next) {
     if (!mongoose.isObjectIdOrHexString(req.params.id)) {
-        return next(new AppError('Ugyldigt ID'))
+        return next(new AppError('Ugyldigt ID', 400))
     }
     next()
 }

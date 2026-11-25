@@ -2,21 +2,21 @@ const userRepository = require('../Repositories/userRepository');
 const AppError = require('../utils/AppError');
 
 // CreateUser rykket til accountService.js.
-/*exports.CreateUser = async (newUserData) => {
+/* exports.CreateUser = async (newUserData) => {
     const newUser = await userRepository.createUser(newUserData);
     if (!newUser) {
         throw new AppError('Karakteren blev ikke oprettet');
     }
     return newUser;
-}*/
+} */
 
-exports.UpdateUser = async (newUserData, id) => {
+/* exports.UpdateUser = async (newUserData, id) => {
     const updatedUser = await userRepository.updateUser(newUserData, id);
     if (!updatedUser) {
         throw new AppError('Karakteren blev ikke opdateret');
     }
     return updatedUser;
-}
+} */
 
 exports.DeleteUser = async (userId) => {
     const user = await userRepository.deleteUser(userId);
