@@ -1,10 +1,10 @@
 /* ===== RESET & FARVEVARIABLER ===== */
 :root {
     --bg-main: #0f1219;
-    --bg-surface: #171c28;
+    --bg-surface: #1E2734;
     --bg-surface-hover: #1e2536;
-    --bg-input: #0c0f15;
-    --border-color: #262f42;
+    --bg-input: #111827;
+    --border-color: #404A58;
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
     --accent-primary: #3b82f6;
@@ -16,6 +16,7 @@
     --radius-md: 10px;
     --radius-lg: 14px;
 }
+
 
 * {
     box-sizing: border-box;
