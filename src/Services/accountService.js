@@ -7,7 +7,8 @@ const toSafeUser = (user) => ({
     id: user._id,
     username: user.username,
     email: user.email,
-    imageUrl: user.imageUrl
+    imageUrl: user.imageUrl,
+    description: user.description ?? ''
 });
 
 exports.register = async ({ username, email, password }) => {

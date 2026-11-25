@@ -1,8 +1,33 @@
+const profileService = require('../Services/profileService');
 
-exports.getProfile = async (req, res) => {
-    //TODO
-}
+// min profil
+exports.handleGetMyProfile = async (req, res, next) => {
+    try {
+        const profile = await profileService.getProfile(req.auth.userId);
+        res.status(200).json({ profile });
+    } catch (error) {
+        next(error);
+    }
+};
 
-exports.updateProfile = async (req, res) => {
-    //TODO
-}
+
+exports.handleGetProfileById = async (req, res, next) => {
+    try {
+        const profile = await profileService.getProfile(req.params.id);
+        res.status(200).json({ profile });
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+exports.handleUpdateDescription = async (req, res, next) => {
+    try {
+        const profile = await profileService.UpdateUser(req.body.description, req.auth.userId);
+        res.status(200).json({ profile });
+    } catch (error) {
+        next(error);
+    }
+};
+
+//ikke nogen generel update metode endnu

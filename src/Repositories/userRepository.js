@@ -13,7 +13,7 @@ exports.getUserById = async (id) => {
 }
 
 exports.updateUser = async (userData, id) => {
-    return await User.findByIdAndUpdate(id, userData, {returnDocument: 'after'})
+    return await User.findByIdAndUpdate(id, {$set: userData, returnDocument: 'after', runValidators: true})
 }
 
 exports.deleteUser = async (id) => {

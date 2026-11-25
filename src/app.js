@@ -17,6 +17,7 @@ app.use(cookieParser());
 app.use('/api/users', userRouter);
 app.use('/api/games', gameRouter);
 app.use('/api/account', accountRoutes);
+app.use('/api/profile', profileRoutes);
 
 
 app.use(express.static("public/static"))

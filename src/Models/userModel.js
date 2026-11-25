@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Password is required'],
         select: false // This will prevent the password from being returned in queries by default
     },
+    description: {
+        type: String,
+        default: '',
+        maxLength: [500, 'Description cannot exceed 500 characters']
+    },
     imageUrl: {
         type: String,
         default: ''
