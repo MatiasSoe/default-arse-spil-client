@@ -23,9 +23,6 @@ app.use('/api/profile', profileRoutes);
 app.use(express.static("public/static"))
 app.use(express.static("public"));
 
-app.use('/profile', profileRoutes);
-
-
 app.use(notFoundHandler)
 app.use(errorHandler);
 

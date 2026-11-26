@@ -49,7 +49,7 @@ project-root/
 | POST | `/api/account/logout` | Log ud af account| 200 OK|
 | GET | `/api/account/me` | Login påkrævet| 401 unauthorized |
 | PATCH | `/api/profile/me` | Ændre desciption| 200 OK |
-| PATCH | `/api/account/me` | Description for lang | 400 bad request  |
+| PATCH | `/api/profile/me` | Description for lang | 400 bad request  |
 
 
 
