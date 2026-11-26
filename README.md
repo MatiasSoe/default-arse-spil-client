@@ -11,13 +11,15 @@ project-root/
 │   ├── services/        # Håndterer logik og kald til api
 │   ├── utils/           # Kontrollerede fejl
 │   ├── validators/      # Validering
-│   ├── app.js           # Konfiguration af express app
-│   └── server.js        # Start server
+│   ├── views/           # 
+│   └── app.js           # Konfiguration af express app
 ├── public/              # Simpel HTML/CSS/fetch
 ├── tests/               
 │   └── api/             # Endpoint test
 ├── package.json         # Project metadata and dependencies
-└── README.md            # Project documentation
+├── README.md            # Project documentation
+├── .env                 # 
+└── server.js            # Start server
 ```
 
 # STEP 1: Lav Scrum Board/Issues
