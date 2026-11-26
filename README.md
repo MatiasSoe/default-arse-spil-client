@@ -59,7 +59,7 @@ project-root/
 
 **POST** `http://localhost:3000/account/register`
 
-```
+```json
 {
   "username": "Bobby",
   "email": "Bobby@test.com",
@@ -67,7 +67,7 @@ project-root/
 }
 ```
 Resultat: 201 Created
-```
+```json
 {
     "message": "Bruger oprettet"
 }
