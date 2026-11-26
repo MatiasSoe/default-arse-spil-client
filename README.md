@@ -90,3 +90,71 @@ Logout fjerner cookien fra browseren, men tilbagekalder ikke en allerede udstedt
 
 # Automatiseret test
 
+```mermaid
+flowchart TD
+    Client["1. Klient (Browser / Postman / public/*.js)"]
+    App["2. Express Global Middleware - src/app.js (morgan, express.json, cookieParser)"]
+    Routes["3. Express Routes - src/Routes/*.js (/api/account, /api/profile, /api/users, /api/games)"]
+    Static["Statiske filer - public/static & public/"]
+    NotFound["notFoundHandler.js"]
+    Auth["4a. authenticate.js - JWT fra auth_token cookie"]
+    Validate["4b. Validators & validateId - Joi / ObjectId"]
+    Controller["5. Controller-lag - src/Controllers/*.js"]
+    Service["6. Service-lag - src/Services/*.js (bcrypt, forretningslogik, DTO)"]
+    Repo["7. Repository-lag - src/Repositories/*.js"]
+    Model["8. Mongoose Models - userModel.js / gameModel.js"]
+    DB[("9. MongoDB Database (users, games)")]
+    ErrHandler["Central errorHandler.js"]
+
+    ResOK(["HTTP Response: 200 OK / 201 Created / 204 No Content"])
+    Res400(["HTTP Response: 400 Bad Request"])
+    Res401(["HTTP Response: 401 Unauthorized"])
+    Res404(["HTTP Response: 404 Not Found (JSON eller HTML)"])
+    Res409(["HTTP Response: 409 Conflict"])
+    Res500(["HTTP Response: 500 Internal Server Error"])
+
+    Client -->|"HTTP Request (JSON + evt. cookie)"| App
+    App -->|"Ugyldigt JSON (entity.parse.failed)"| ErrHandler
+    App --> Routes
+    Routes -->|"Ingen API-match"| Static
+    Static -->|"Fil fundet"| ResOK
+    Static -->|"Ingen match"| NotFound
+    NotFound --> Res404
+
+    Routes -->|"Beskyttet rute (/me)"| Auth
+    Routes -->|"Åben rute"| Validate
+    Auth -->|"Manglende / ugyldig / udløbet JWT"| Res401
+    Auth -->|"Gyldig JWT (req.auth.userId)"| Validate
+    Validate -->|"Joi-fejl"| Res400
+    Validate -->|"Ugyldigt ObjectId (next AppError 400)"| ErrHandler
+    Validate -->|"Gyldigt input"| Controller
+
+    Controller -->|"POST /logout (clearCookie)"| ResOK
+    Controller --> Service
+    Service -->|"AppError (401 / 404 / 409 / 500)"| ErrHandler
+    Service --> Repo
+    Repo --> Model
+    Model -->|"ValidationError / CastError"| ErrHandler
+    Model --> DB
+
+    DB -->|"Dokumenter retur"| Model
+    DB -->|"Duplicate Key (code 11000)"| ErrHandler
+    Model --> Repo
+    Repo --> Service
+    Service -->|"Sikker DTO (uden password)"| Controller
+    Controller -->|"JSON + evt. Set-Cookie (JWT)"| ResOK
+    Controller -->|"next(error)"| ErrHandler
+
+    ErrHandler -->|"400 (AppError / ValidationError / CastError / JSON)"| Res400
+    ErrHandler -->|"401 (AppError)"| Res401
+    ErrHandler -->|"404 (AppError)"| Res404
+    ErrHandler -->|"409 (AppError / Mongo 11000)"| Res409
+    ErrHandler -->|"500 (Uventet fejl)"| Res500
+
+    ResOK -.->|"Tilbage til klient"| Client
+    Res400 -.-> Client
+    Res401 -.-> Client
+    Res404 -.-> Client
+    Res409 -.-> Client
+    Res500 -.-> Client
+```
