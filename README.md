@@ -52,37 +52,26 @@ project-root/
 | PATCH | `/api/account/me` | Description for lang | 400 bad request  |
 
 
-**OBS:** `PUT` er her bevidst implementeret som *delvis opdatering*, selvom `PATCH` normalt ville være mere præcist. Diskutér om I vil omdøbe endpointet til `PATCH`, eller kræve et komplet objekt ved `PUT`.
+
+**OBS:** `PUT` er her bevidst brugt til som admin i postman kan tildele data til specifikke bruger. `PATCH` er her brugt til brugeren selv, når logget ind, kan opdater.
 
 ### Eksempel i Postman
 
-**POST** `http://localhost:3000/api/characters`  
-Header: `Content-Type: application/json`
+**POST** `http://localhost:3000/account/register`
 
-```json
+```
 {
-  "name": "The Ninth Doctor",
-  "actor": "Christopher Eccleston",
-  "species": "Time Lord",
-  "firstAppearance": 2005,
-  "homePlanet": "Gallifrey",
-  "description": "Den niende Doctor",
-  "isFavorite": false
+  "username": "Bobby",
+  "email": "Bobby@test.com",
+  "password": "abcd1234"
 }
 ```
-
-Kopiér `id` fra resultatet og prøv:
-
-```http
-GET http://localhost:3000/api/characters/<id>
-PUT http://localhost:3000/api/characters/<id>
-DELETE http://localhost:3000/api/characters/<id>
+Resultat: 201 Created
 ```
-
-Ved PUT kan du eksempelvis sende `{"isFavorite": true}` som JSON-body.
-
-**Forudsig svaret, før du trykker Send:** Hvad sker der ved ukendt gyldigt ID? Ved `abc` som ID? Ved manglende `name` i POST? Ved `firstAppearance: 100`? Ved et ukendt endpoint?
-
+{
+    "message": "Bruger oprettet"
+}
+```
 # Ekstern API
 
 # Login og JWT
