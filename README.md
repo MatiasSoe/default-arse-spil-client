@@ -11,14 +11,14 @@ project-root/
 │   ├── services/        # Håndterer logik og kald til api
 │   ├── utils/           # Kontrollerede fejl
 │   ├── validators/      # Validering
-│   ├── views/           # 
+│   ├── views/           # static 404.html
 │   └── app.js           # Konfiguration af express app
 ├── public/              # Simpel HTML/CSS/fetch
 ├── tests/               
 │   └── api/             # Endpoint test
 ├── package.json         # Project metadata and dependencies
 ├── README.md            # Project documentation
-├── .env                 # 
+├── .env                 # Miljøvariabler (ikke i git)
 └── server.js            # Start server
 ```
 
@@ -33,13 +33,24 @@ project-root/
 
 | Metode | URL | Formål | Succes |
 | --- | --- | --- | --- |
-| GET | `/api/characters` | Alle karakterer | 200 |
-| GET | `/api/characters?name=Doctor` | Søg efter navn | 200 |
-| GET | `/api/characters/:id` | En karakter | 200 |
-| POST | `/api/characters` | Opret karakter | 201 + Location |
-| PUT | `/api/characters/:id` | Opdater felter (delvis opdatering i denne demo) | 200 |
-| DELETE | `/api/characters/:id` | Slet karakter | 204 uden body |
-| GET | `/api/external/shows` | Søg efter Doctor Who-serier på TVmaze | 200 |
+| GET | `/api/users`| Hent alle brugere | 200 OK|
+| GET | `/api/users/:id`| Hent specifik bruger | 200 OK |
+| POST | `/api/users`| Opret ny bruger | 201 created |
+| PUT | `/api/users/:id`| Tildel data til specifik bruger | 200 OK |
+| DELETE | `/api/users/:id`| Slet specifik bruger| 200 OK |
+| POST | `/api/account/register` | Opret en ny bruger | 201 created |
+| POST | `/api/account/register` | Ugyldigt username| 400 bad request |
+| POST | `/api/account/register` | Duplikeret email| 409 conflict |
+| POST | `/api/account/register` | Ugyldigt password| 400 bad request |
+| POST | `/api/account/login` | Bruger kan logge ind | 200 OK  |
+| POST | `/api/account/login` | Ugyldigt email| 401 unauthorized |
+| POST | `/api/account/login` | Ugyldigt password| 401 unauthorized |
+| GET | `/api/account/me` | Tilgå ens account| 200 OK|
+| POST | `/api/account/logout` | Log ud af account| 200 OK|
+| GET | `/api/account/me` | Login påkrævet| 401 unauthorized |
+| PATCH | `/api/profile/me` | Ændre desciption| 200 OK |
+| PATCH | `/api/account/me` | Description for lang | 400 bad request  |
+
 
 **OBS:** `PUT` er her bevidst implementeret som *delvis opdatering*, selvom `PATCH` normalt ville være mere præcist. Diskutér om I vil omdøbe endpointet til `PATCH`, eller kræve et komplet objekt ved `PUT`.
 

@@ -1,0 +1,311 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9a1c5227-53c3-4f15-950e-e687b63a8a66\" name=\"Changes\" comment=\"Opsat struktur\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/FillDatabaseWithGames/seedGames.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/package-lock.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.gitignore\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;MatiasSoe&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/MatiasSoe/default-arse-spil-client.git&quot;,\r\n    &quot;accountId&quot;: &quot;ebf74e96-64db-48f2-b386-97706ceee21b&quot;\r\n  }\r\n}</component>\r\n  <component name=\"McpProjectServerCommands\">\r\n    <commands />\r\n    <urls />\r\n  </component>\r\n  <component name=\"NextEditCompletionFeaturesState\">\r\n    <decayedCancelled>\r\n      <entry key=\"MS100\" value=\"0.0\" />\r\n      <entry key=\"MS500\" value=\"6.352191144093901E-66\" />\r\n      <entry key=\"S2\" value=\"5.092821719302177E-17\" />\r\n      <entry key=\"S5\" value=\"3.5768072542266435E-7\" />\r\n      <entry key=\"S10\" value=\"7.852724512418606E-4\" />\r\n      <entry key=\"S30\" value=\"0.14370039507068041\" />\r\n      <entry key=\"S60\" value=\"0.5434879834087873\" />\r\n      <entry key=\"M2\" value=\"1.2213378355862938\" />\r\n      <entry key=\"M5\" value=\"2.821085737079619\" />\r\n      <entry key=\"M10\" value=\"4.261616332227838\" />\r\n      <entry key=\"M15\" value=\"4.980848115992362\" />\r\n      <entry key=\"M30\" value=\"5.87684553837106\" />\r\n      <entry key=\"H1\" value=\"6.406319342920152\" />\r\n      <entry key=\"H2\" value=\"6.694613187012793\" />\r\n      <entry key=\"H4\" value=\"6.845100933349577\" />\r\n      <entry key=\"D1\" value=\"6.973871092719261\" />\r\n      <entry key=\"W1\" value=\"6.996259568143979\" />\r\n    </decayedCancelled>\r\n    <decayedSelected>\r\n      <entry key=\"MS100\" value=\"1.0\" />\r\n      <entry key=\"MS500\" value=\"1.0\" />\r\n      <entry key=\"S2\" value=\"1.0\" />\r\n      <entry key=\"S5\" value=\"1.0\" />\r\n      <entry key=\"S10\" value=\"1.0\" />\r\n      <entry key=\"S30\" value=\"1.0000034852655184\" />\r\n      <entry key=\"S60\" value=\"1.0018668865842584\" />\r\n      <entry key=\"M2\" value=\"1.0432074829660138\" />\r\n      <entry key=\"M5\" value=\"1.284592589270663\" />\r\n      <entry key=\"M10\" value=\"1.5334722010289412\" />\r\n      <entry key=\"M15\" value=\"1.6577707072638486\" />\r\n      <entry key=\"M30\" value=\"1.8110306450830622\" />\r\n      <entry key=\"H1\" value=\"1.9005723985794045\" />\r\n      <entry key=\"H2\" value=\"1.9489849306387352\" />\r\n      <entry key=\"H4\" value=\"1.9741585757148241\" />\r\n      <entry key=\"D1\" value=\"1.9956459763898942\" />\r\n      <entry key=\"W1\" value=\"1.999376832824383\" />\r\n    </decayedSelected>\r\n    <decayedShown>\r\n      <entry key=\"MS100\" value=\"2.88328286481819E-4\" />\r\n      <entry key=\"MS500\" value=\"0.19587429673733517\" />\r\n      <entry key=\"S2\" value=\"0.665264520540343\" />\r\n      <entry key=\"S5\" value=\"0.8495675707322811\" />\r\n      <entry key=\"S10\" value=\"0.922501702930415\" />\r\n      <entry key=\"S30\" value=\"1.116692860750437\" />\r\n      <entry key=\"S60\" value=\"1.531356553547473\" />\r\n      <entry key=\"M2\" value=\"2.256184172904172\" />\r\n      <entry key=\"M5\" value=\"4.099621680507799\" />\r\n      <entry key=\"M10\" value=\"5.790655232874929\" />\r\n      <entry key=\"M15\" value=\"6.635187804465129\" />\r\n      <entry key=\"M30\" value=\"7.685863808863796\" />\r\n      <entry key=\"H1\" value=\"8.305797882825082\" />\r\n      <entry key=\"H2\" value=\"8.643027343174198\" />\r\n      <entry key=\"H4\" value=\"8.818967902406607\" />\r\n      <entry key=\"D1\" value=\"8.969467581430543\" />\r\n      <entry key=\"W1\" value=\"8.995629309285391\" />\r\n    </decayedShown>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6,\r\n  &quot;fromUser&quot;: false\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3MBUgmB7kiZXH3DGeNW5JLZhV4S\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"Node.js.seedGames.js.executor\": \"Run\",\r\n    \"RunOnceActivity.MCP Project settings loaded\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"RunOnceActivity.typescript.service.memoryLimit.init\": \"true\",\r\n    \"codeWithMe.voiceChat.enabledByDefault\": \"false\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"javascript.nodejs.core.library.configured.version\": \"24.21.0\",\r\n    \"javascript.nodejs.core.library.typings.version\": \"24.19.2\",\r\n    \"javascript.preferred.runtime.type.id\": \"node\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.jshint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.jshint\": \"\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_interpreter_path\": \"C:/Users/Matia/AppData/Roaming/JetBrains/WebStorm2026.2/node/versions/24.21.0/node\",\r\n    \"nodejs_package_manager_path\": \"npm\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9a1c5227-53c3-4f15-950e-e687b63a8a66\" name=\"Changes\" comment=\"\" />\r\n      <created>1794823567332</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1794823567332</updated>\r\n      <workItem from=\"1794823568324\" duration=\"5230000\" />\r\n      <workItem from=\"1795084392323\" duration=\"217000\" />\r\n      <workItem from=\"1795426202193\" duration=\"764000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Opsat struktur\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1794903633396</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1794903633396</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Opsat struktur\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1794904221397</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1794904221397</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Opsat struktur\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1794905805807</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1794905805807</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Opsat struktur\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Opsat struktur\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c366f3135b844d1e894a152686f6087f87ceb82a)
++++ b/.idea/workspace.xml	(date 1795681330505)
+@@ -4,11 +4,19 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="Opsat struktur">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/FillDatabaseWithGames/seedGames.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
++    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController.">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/FillDatabaseWithGames/seedGames.js" beforeDir="false" afterPath="$PROJECT_DIR$/FillDatabaseWithGames/seedGames.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/userController.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Middelware/validateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Middelware/validateUser.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Models/gameModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/gameModel.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Repositories/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/userRepository.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/userRoutes.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/userService.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/database.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/utils/AppError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/AppError.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -23,6 +31,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+@@ -43,62 +56,65 @@
+   </component>
+   <component name="NextEditCompletionFeaturesState">
+     <decayedCancelled>
+-      <entry key="MS100" value="0.0" />
+-      <entry key="MS500" value="6.352191144093901E-66" />
+-      <entry key="S2" value="5.092821719302177E-17" />
+-      <entry key="S5" value="3.5768072542266435E-7" />
+-      <entry key="S10" value="7.852724512418606E-4" />
+-      <entry key="S30" value="0.14370039507068041" />
+-      <entry key="S60" value="0.5434879834087873" />
+-      <entry key="M2" value="1.2213378355862938" />
+-      <entry key="M5" value="2.821085737079619" />
+-      <entry key="M10" value="4.261616332227838" />
+-      <entry key="M15" value="4.980848115992362" />
+-      <entry key="M30" value="5.87684553837106" />
+-      <entry key="H1" value="6.406319342920152" />
+-      <entry key="H2" value="6.694613187012793" />
+-      <entry key="H4" value="6.845100933349577" />
+-      <entry key="D1" value="6.973871092719261" />
+-      <entry key="W1" value="6.996259568143979" />
++      <entry key="MS100" value="1.0" />
++      <entry key="MS500" value="1.0000559937353855" />
++      <entry key="S2" value="1.1067320150010063" />
++      <entry key="S5" value="1.7107895123085344" />
++      <entry key="S10" value="2.88491681029793" />
++      <entry key="S30" value="8.528764513405452" />
++      <entry key="S60" value="15.438443253919326" />
++      <entry key="M2" value="28.45561690701238" />
++      <entry key="M5" value="57.89527702021245" />
++      <entry key="M10" value="81.64777972844142" />
++      <entry key="M15" value="93.02127969049315" />
++      <entry key="M30" value="106.90759166829697" />
++      <entry key="H1" value="115.00222065560229" />
++      <entry key="H2" value="119.69079313360521" />
++      <entry key="H4" value="131.2301303928322" />
++      <entry key="D1" value="290.6554779860993" />
++      <entry key="W1" value="396.7145355269054" />
+     </decayedCancelled>
+     <decayedSelected>
+-      <entry key="MS100" value="1.0" />
+-      <entry key="MS500" value="1.0" />
+-      <entry key="S2" value="1.0" />
+-      <entry key="S5" value="1.0" />
+-      <entry key="S10" value="1.0" />
+-      <entry key="S30" value="1.0000034852655184" />
+-      <entry key="S60" value="1.0018668865842584" />
+-      <entry key="M2" value="1.0432074829660138" />
+-      <entry key="M5" value="1.284592589270663" />
+-      <entry key="M10" value="1.5334722010289412" />
+-      <entry key="M15" value="1.6577707072638486" />
+-      <entry key="M30" value="1.8110306450830622" />
+-      <entry key="H1" value="1.9005723985794045" />
+-      <entry key="H2" value="1.9489849306387352" />
+-      <entry key="H4" value="1.9741585757148241" />
+-      <entry key="D1" value="1.9956459763898942" />
+-      <entry key="W1" value="1.999376832824383" />
++      <entry key="MS100" value="3.451E-320" />
++      <entry key="MS500" value="1.281113301233944E-64" />
++      <entry key="S2" value="1.063974118013131E-16" />
++      <entry key="S5" value="4.199837144512803E-7" />
++      <entry key="S10" value="8.232319148223992E-4" />
++      <entry key="S30" value="0.25020272743756056" />
++      <entry key="S60" value="1.3528926972419106" />
++      <entry key="M2" value="3.6451860324106007" />
++      <entry key="M5" value="7.967561597950233" />
++      <entry key="M10" value="11.230411880936005" />
++      <entry key="M15" value="12.779466111056713" />
++      <entry key="M30" value="14.669603062877846" />
++      <entry key="H1" value="15.77243158994834" />
++      <entry key="H2" value="16.397144170910178" />
++      <entry key="H4" value="17.54288692460516" />
++      <entry key="D1" value="32.1532988041931" />
++      <entry key="W1" value="41.866326651492166" />
+     </decayedSelected>
+     <decayedShown>
+-      <entry key="MS100" value="2.88328286481819E-4" />
+-      <entry key="MS500" value="0.19587429673733517" />
+-      <entry key="S2" value="0.665264520540343" />
+-      <entry key="S5" value="0.8495675707322811" />
+-      <entry key="S10" value="0.922501702930415" />
+-      <entry key="S30" value="1.116692860750437" />
+-      <entry key="S60" value="1.531356553547473" />
+-      <entry key="M2" value="2.256184172904172" />
+-      <entry key="M5" value="4.099621680507799" />
+-      <entry key="M10" value="5.790655232874929" />
+-      <entry key="M15" value="6.635187804465129" />
+-      <entry key="M30" value="7.685863808863796" />
+-      <entry key="H1" value="8.305797882825082" />
+-      <entry key="H2" value="8.643027343174198" />
+-      <entry key="H4" value="8.818967902406607" />
+-      <entry key="D1" value="8.969467581430543" />
+-      <entry key="W1" value="8.995629309285391" />
++      <entry key="MS100" value="0.0012360904237991017" />
++      <entry key="MS500" value="0.2620658413391266" />
++      <entry key="S2" value="0.7556802130387555" />
++      <entry key="S5" value="1.4184059081107663" />
++      <entry key="S10" value="2.661689561425541" />
++      <entry key="S30" value="8.645544722703036" />
++      <entry key="S60" value="16.665153215497913" />
++      <entry key="M2" value="31.966673964716502" />
++      <entry key="M5" value="65.74194990691213" />
++      <entry key="M10" value="92.7891238796497" />
++      <entry key="M15" value="105.73195763391776" />
++      <entry key="M30" value="121.5369568098189" />
++      <entry key="H1" value="130.7528077831247" />
++      <entry key="H2" value="136.07652584874884" />
++      <entry key="H4" value="148.7668957597887" />
++      <entry key="D1" value="322.80690102228095" />
++      <entry key="W1" value="438.5805131603952" />
+     </decayedShown>
++  </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+   </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 6,
+@@ -109,33 +125,46 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+-    "Node.js.seedGames.js.executor": "Run",
+-    "RunOnceActivity.MCP Project settings loaded": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+-    "codeWithMe.voiceChat.enabledByDefault": "false",
+-    "git-widget-placeholder": "master",
+-    "javascript.nodejs.core.library.configured.version": "24.21.0",
+-    "javascript.nodejs.core.library.typings.version": "24.19.2",
+-    "javascript.preferred.runtime.type.id": "node",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.jshint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.jshint": "",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_interpreter_path": "C:/Users/Matia/AppData/Roaming/JetBrains/WebStorm2026.2/node/versions/24.21.0/node",
+-    "nodejs_package_manager_path": "npm"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;Node.js.seedGames.js.executor&quot;: &quot;Run&quot;,
++    &quot;Node.js.server.js.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
++    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;Issue-#1-Profil---Opret-en-bruger&quot;,
++    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;24.21.0&quot;,
++    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;24.19.2&quot;,
++    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_interpreter_path&quot;: &quot;C:/Users/Matia/AppData/Roaming/JetBrains/WebStorm2026.2/node/versions/24.21.0/node&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Coffee Enjoyer\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
+   }
+-}]]></component>
++}</component>
++  <component name="RunManager">
++    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server.js" working-dir="$PROJECT_DIR$">
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Node.js.server.js" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
++        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-WS-263.7307.202" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -148,7 +177,18 @@
+       <updated>1794823567332</updated>
+       <workItem from="1794823568324" duration="5230000" />
+       <workItem from="1795084392323" duration="217000" />
+-      <workItem from="1795426202193" duration="764000" />
++      <workItem from="1795426202193" duration="2474000" />
++      <workItem from="1795429030452" duration="435000" />
++      <workItem from="1795429484288" duration="409000" />
++      <workItem from="1795429929572" duration="425000" />
++      <workItem from="1795430366325" duration="30000" />
++      <workItem from="1795430421735" duration="379000" />
++      <workItem from="1795430868569" duration="878000" />
++      <workItem from="1795431854422" duration="85000" />
++      <workItem from="1795432369532" duration="12000" />
++      <workItem from="1795433910472" duration="26000" />
++      <workItem from="1795435895385" duration="3955000" />
++      <workItem from="1795508545329" duration="311000" />
+     </task>
+     <task id="LOCAL-00001" summary="Opsat struktur">
+       <option name="closed" value="true" />
+@@ -174,14 +214,53 @@
+       <option name="project" value="LOCAL" />
+       <updated>1794905805807</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="Opsat Database fill af spil">
++      <option name="closed" value="true" />
++      <created>1795428383718</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1795428383718</updated>
++    </task>
++    <task id="LOCAL-00005" summary="Lavet create user igenem lagende  model,repository,service,controller,route">
++      <option name="closed" value="true" />
++      <created>1795438129614</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1795438129614</updated>
++    </task>
++    <task id="LOCAL-00006" summary="tilføjet AppError i userService">
++      <option name="closed" value="true" />
++      <created>1795438513879</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1795438513879</updated>
++    </task>
++    <task id="LOCAL-00007" summary="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController.">
++      <option name="closed" value="true" />
++      <created>1795508463818</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1795508463818</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="UnknownFeatures">
++    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
++  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Opsat struktur" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Opsat struktur" />
++    <MESSAGE value="Opsat Database fill af spil" />
++    <MESSAGE value="Lavet create user igenem lagende  model,repository,service,controller,route" />
++    <MESSAGE value="tilføjet AppError i userService" />
++    <MESSAGE value="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController." />
++    <option name="LAST_COMMIT_MESSAGE" value="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController." />
+   </component>
+ </project>
+\ No newline at end of file
