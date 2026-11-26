@@ -1,0 +1,1027 @@
+This file is a merged representation of a subset of the codebase, containing specifically included files, combined into a single document by Repomix.
+
+================================================================
+File Summary
+================================================================
+
+Purpose:
+--------
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+
+File Format:
+------------
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  a. A separator line (================)
+  b. The file path (File: path/to/file)
+  c. Another separator line
+  d. The full contents of the file
+  e. A blank line
+
+Usage Guidelines:
+-----------------
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+
+Notes:
+------
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: server.js, src/**
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+
+
+================================================================
+Directory Structure
+================================================================
+src/
+  config/
+    auth.js
+    database.js
+  Controllers/
+    accountController.js
+    gameController.js
+    profileController.js
+    userController.js
+  Middelware/
+    authenticate.js
+    errorHandler.js
+    notFoundHandler.js
+    validateUser.js
+  Models/
+    gameModel.js
+    userModel.js
+  Repositories/
+    gameRepository.js
+    userRepository.js
+  Routes/
+    accountRoutes.js
+    gameRoutes.js
+    profileRoutes.js
+    userRoutes.js
+  Services/
+    accountService.js
+    gameService.js
+    profileService.js
+    userService.js
+  utils/
+    AppError.js
+    authToken.js
+    passwordHasher.js
+  Validators/
+    accountValidator.js
+    profileValidator.js
+    userValidator.js
+  Views/
+    page-not-found.html
+  app.js
+server.js
+
+================================================================
+Files
+================================================================
+
+================
+File: src/config/auth.js
+================
+const AUTH_COOKIE_NAME = 'auth_token';
+const AUTH_TOKEN_TTL_SECONDS = 60 * 60;
+
+const getJwtSecret = () => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || secret.length < 32) {
+        throw new Error('JWT_SECRET skal være konfigureret med mindst 32 tegn');
+    }
+
+    return secret;
+};
+
+const assertJwtSecretConfigured = () => {
+    getJwtSecret();
+};
+
+const getAuthCookieOptions = () => ({
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    path: '/',
+    maxAge: AUTH_TOKEN_TTL_SECONDS * 1000
+});
+
+module.exports = {
+    AUTH_COOKIE_NAME,
+    AUTH_TOKEN_TTL_SECONDS,
+    assertJwtSecretConfigured,
+    getAuthCookieOptions,
+    getJwtSecret
+};
+
+================
+File: src/Middelware/authenticate.js
+================
+const jwt = require('jsonwebtoken');
+const { AUTH_COOKIE_NAME } = require('../config/auth');
+const { verifyAccessToken } = require('../utils/authToken');
+
+module.exports = (req, res, next) => {
+    const token = req.cookies && req.cookies[AUTH_COOKIE_NAME];
+    if (!token) {
+        return res.status(401).json({ error: 'Login påkrævet' });
+    }
+
+    try {
+        const payload = verifyAccessToken(token);
+        if (typeof payload.sub !== 'string' || payload.sub.length === 0) {
+            return res.status(401).json({ error: 'Ugyldig eller udløbet login-session' });
+        }
+
+        req.auth = { userId: payload.sub };
+        return next();
+    } catch (error) {
+        if (error instanceof jwt.JsonWebTokenError) {
+            return res.status(401).json({ error: 'Ugyldig eller udløbet login-session' });
+        }
+        return next(error);
+    }
+};
+
+================
+File: src/Middelware/notFoundHandler.js
+================
+const path = require("node:path")
+
+function notFoundHandler(req, res, next) {
+    if (req.path === "/api" || req.path.startsWith("/api/")){
+        return res.status(404).json({ error: "API ruten blev ikke fundet"})
+    }
+
+    res.status(404).type("html").sendFile(path.join(__dirname, "../Views/page-not-found.html"))
+
+}
+
+module.exports = notFoundHandler;
+
+================
+File: src/Routes/gameRoutes.js
+================
+const express = require('express');
+const gameController = require("../Controllers/gameController");
+const router = express.Router();
+
+
+router.get('/', gameController.handleGetAllGames);
+router.get('/store', gameController.getStoreGames);
+router.get('/:id', gameController.getGameById);
+
+
+module.exports = router;
+
+================
+File: src/Services/gameService.js
+================
+const gameRepository = require('../Repositories/gameRepository');
+
+const getAllGames = async () => {
+    return await gameRepository.findAll();
+};
+
+const getGamesGroupedByGenre = async () => {
+    const games = await gameRepository.findAll();
+
+    return games.reduce((grouped, game) => {
+        const genre = game.genre || 'Andet';
+        if(!grouped[genre]) {
+            grouped[genre] = [];
+        }
+        grouped[genre].push(game);
+        return grouped;
+    }, {});
+};
+
+const getGameById = async (id) => {
+    const game = await gameRepository.findById(id);
+    if(!game) {
+        throw new Error('Spillet blev ikke fundet');
+    }
+    return game; 
+};
+
+module.exports = {
+    getAllGames, 
+    getGamesGroupedByGenre, 
+    getGameById
+};
+
+================
+File: src/utils/authToken.js
+================
+const jwt = require('jsonwebtoken');
+const {
+    AUTH_TOKEN_TTL_SECONDS,
+    getJwtSecret
+} = require('../config/auth');
+
+exports.createAccessToken = (userId) => jwt.sign(
+    {},
+    getJwtSecret(),
+    {
+        algorithm: 'HS256',
+        subject: String(userId),
+        expiresIn: AUTH_TOKEN_TTL_SECONDS
+    }
+);
+
+exports.verifyAccessToken = (token) => jwt.verify(
+    token,
+    getJwtSecret(),
+    { algorithms: ['HS256'] }
+);
+
+================
+File: src/utils/passwordHasher.js
+================
+const bcrypt = require('bcrypt')
+
+const SALT_ROUNDS = 12; // Antal runder for saltning af password
+
+exports.hashPassword = async (plainPassword) => {
+    return await bcrypt.hash(plainPassword, SALT_ROUNDS)
+}
+
+exports.comparePassword = async (plainPassword, hashedPassword) => {
+    return await bcrypt.compare(plainPassword, hashedPassword)
+}
+
+================
+File: src/Validators/accountValidator.js
+================
+const joi = require('joi');
+
+const registerSchema = joi.object({
+    username: joi.string().trim().min(3).max(30).required(),
+    email: joi.string().trim().email().required(),
+    password: joi.string().min(8).max(128).required()
+});
+
+const loginSchema = joi.object({
+    email: joi.string().trim().email().required(),
+    password: joi.string().required()
+});
+
+exports.validateRegister = (req, res, next) => {
+    const { error, value } = registerSchema.validate(req.body);
+    if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+    }
+    req.body = value;
+    next();
+};
+
+exports.validateLogin = (req, res, next) => {
+    const { error, value } = loginSchema.validate(req.body);
+    if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+    }
+    req.body = value;
+    next();
+};
+
+================
+File: src/Validators/profileValidator.js
+================
+const joi = require('joi');
+
+const updateDescriptionSchema = joi.object({
+    description: joi.string().trim().allow('').max(500).required()
+});
+
+exports.validateUpdateDescription = (req, res, next) => {
+    const { error, value } = updateDescriptionSchema.validate(req.body);
+    if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+    }
+    req.body = value;
+    next();
+};
+
+================
+File: src/Views/page-not-found.html
+================
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siden blev ikke fundet</title>
+</head>
+<body>
+<h1>404 - Siden blev ikke fundet</h1>
+<p>Den side, du har anmodet om, kunne ikke findes.</p>
+<a href="/">Return to Index</a>
+</body>
+</html>
+
+================
+File: src/Controllers/gameController.js
+================
+const gameService = require('../Services/gameService');
+
+exports.handleGetAllGames = async (req, res, next) => {
+    try {
+        const games = await gameService.getAllGames();
+        res.status(200).json(games)
+    } catch (error) {
+        next(error);
+    }
+}
+
+exports.getStoreGames = async (req, res, next) => {
+    try {
+        const games = await gameService.getGamesGroupedByGenre();
+        res.status(200).json(games);
+    } catch (error) {
+        next(error);
+    }
+}
+
+exports.getGameById = async (req, res, next) => {
+    try{
+        const game = await gameService.getGameById(req.params.id);
+        res.status(200).json(game);
+    } catch (error) {
+        next(error); 
+    }
+}
+
+================
+File: src/Controllers/profileController.js
+================
+const profileService = require('../Services/profileService');
+
+// min profil
+exports.handleGetMyProfile = async (req, res, next) => {
+    try {
+        const profile = await profileService.getProfile(req.auth.userId);
+        res.status(200).json({ profile });
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+exports.handleGetProfileById = async (req, res, next) => {
+    try {
+        const profile = await profileService.getProfile(req.params.id);
+        res.status(200).json({ profile });
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+exports.handleUpdateDescription = async (req, res, next) => {
+    try {
+        const profile = await profileService.UpdateUser(req.body.description, req.auth.userId);
+        res.status(200).json({ profile });
+    } catch (error) {
+        next(error);
+    }
+};
+
+//ikke nogen generel update metode endnu
+
+================
+File: src/Models/gameModel.js
+================
+const mongoose = require('mongoose');
+
+const gameSchema = new mongoose.Schema({
+    id: { type: Number, required: true, unique: true },
+    title: { type: String, required: true },
+    thumbnail: { type: String, required: true },
+    short_description: String,
+    genre: { type: String, required: true },
+    platform: String,
+    publisher: String,
+    developer: String,
+    release_date: String,
+    freetogame_profile_url: String,
+    price: { type: Number, default: 150 }
+});
+
+module.exports = mongoose.model('Game', gameSchema);
+
+================
+File: src/Repositories/gameRepository.js
+================
+const Game = require('../Models/gameModel');
+
+
+const findAll = async () => {
+    return await Game.find();
+};
+
+const findById = async () => {
+    return await Game.findOne ({ id: Number(id) });
+};
+
+const findByGenre = async (genre) => {
+    return await Game.find({ genre });
+};
+
+module.exports = {
+    findAll,
+    findById,
+    findByGenre
+}
+
+================
+File: src/Routes/profileRoutes.js
+================
+const express = require('express');
+const router = express.Router();
+const profileController = require('../Controllers/profileController');
+
+const authenticate = require('../Middelware/authenticate');
+const { validateId } = require('../Middelware/validateUser');
+const { validateUpdateDescription } = require('../Validators/profileValidator');
+
+router.get('/me', authenticate, profileController.handleGetMyProfile);
+router.patch('/me', authenticate, validateUpdateDescription, profileController.handleUpdateDescription);
+router.get('/:id', validateId, profileController.handleGetProfileById);
+
+module.exports = router;
+
+================
+File: src/Services/profileService.js
+================
+const userRepository = require("../Repositories/userRepository");
+const AppError = require("../utils/AppError");
+
+const toProfile = (user) => ({
+    id: user._id,
+    username: user.username,
+    imageUrl: user.imageUrl,
+    description: user.description ?? ''
+});
+
+exports.getProfile = async (userId) => {
+    const user = await userRepository.getUserById(userId);
+    if (!user) {
+        throw new AppError('Profilen blev ikke fundet', 404);
+    }
+
+    return toProfile(user);
+};
+
+exports.UpdateUser = async (description, userId) => {
+    const updatedUser = await userRepository.updateUser({ description }, userId);
+    if (!updatedUser) {
+        throw new AppError('Karakteren blev ikke opdateret');
+    }
+    return toProfile(updatedUser);
+}
+
+================
+File: src/Controllers/accountController.js
+================
+const accountService = require('../Services/accountService');
+const authToken = require('../utils/authToken');
+const {
+    AUTH_COOKIE_NAME,
+    getAuthCookieOptions
+} = require('../config/auth');
+
+exports.handleRegister = async (req, res, next) => {
+    try {
+        const user = await accountService.register(req.body);
+        res.status(201).json({
+            message: 'Bruger oprettet',
+            user // Returner den oprettede bruger uden password
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+exports.handleLogin = async (req, res, next) => {
+    try {
+        const user = await accountService.login(req.body);
+        const token = authToken.createAccessToken(user.id);
+        res.cookie(AUTH_COOKIE_NAME, token, getAuthCookieOptions());
+        res.status(200).json({
+            message: 'Login gennemført',
+            user
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+exports.handleLogout = (_req, res) => {
+    const { maxAge, ...clearCookieOptions } = getAuthCookieOptions();
+    res.clearCookie(AUTH_COOKIE_NAME, clearCookieOptions);
+    res.status(200).json({ message: 'Logget ud' });
+};
+
+exports.handleCurrentUser = async (req, res, next) => {
+    try {
+        const user = await accountService.getAuthenticatedUser(req.auth.userId);
+        res.status(200).json({ user });
+    } catch (error) {
+        next(error);
+    }
+};
+
+================
+File: src/Middelware/errorHandler.js
+================
+const AppError = require("../utils/AppError")
+
+function errorHandler(err, _req, res, _next){
+    if (err instanceof AppError){
+        return res.status(err.status).json({error: err.message})
+    }
+    // Handle specific Mongoose errors
+    // Duplicate key error (e.g., unique constraint violation)
+    if (err.code === 11000) {
+        return res.status(409).json({ error: 'Email er allerede i brug' });
+    }
+    if (err.name === 'ValidationError' || err.name === 'CastError') {
+        return res.status(400).json({error: 'Ugyldige data'});
+    }
+    if (err.type === 'entity.parse.failed'){
+        return res.status(400).json({error: 'Ugyldigt JSON'});
+    }
+    console.error('Uventet serverfejl:', err);
+    res.status(500).json({error: 'Intern serverfejl'});
+}
+module.exports = errorHandler
+
+================
+File: src/Middelware/validateUser.js
+================
+const mongoose = require('mongoose');
+const AppError = require('../utils/AppError')
+
+
+function validateUserData(req, res, next) {
+    const name = req.body?.username?.trim();
+    const email = req.body?.email?.trim();
+    const password = req.body?.password.trim();
+
+    if (typeof name !== 'string') { // sikrer at name er en string - ingen numbers
+        return res.status(400).json({
+            error: 'Brugernavn skal være en string'
+        });
+    }
+
+    if (!name) {
+        return res.status(400).json({
+            error: 'Brugernavn er påkrævet'
+        });
+    }
+
+    if (name.length < 3) {
+        return res.status(400).json({
+            error: 'Brugernavn skal være mindst 3 tegn'
+        });
+    }
+
+    if (typeof email !== 'string') { // sikrer at email er en string - ingen numbers
+        return res.status(400).json({
+            error: 'Email skal være en string'
+        });
+    }
+
+    if (!email) {
+        return res.status(400).json({
+            error: 'Email er påkrævet'
+        });
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return res.status(400).json({
+            error: 'Email har ugyldigt format'
+        });
+    }
+
+    if (!password || password === '') {
+        return res.status(400).json({
+            error: 'Password må ikke være tomt'
+        })
+    }
+
+    req.body.username = name;
+    req.body.email = email;
+    req.body.password = password
+    next(); // fortsæt til næste middleware eller controller
+}
+
+function validateId(req, res, next) {
+    if (!mongoose.isObjectIdOrHexString(req.params.id)) {
+        return next(new AppError('Ugyldigt ID', 400))
+    }
+    next()
+}
+
+module.exports = { validateUserData, validateId};
+
+================
+File: src/Models/userModel.js
+================
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: [true, 'Name is required']
+    },
+    email: {
+        type: String,
+        required: [true, 'Email is required'],
+        unique: true,
+        lowercase: true
+    },
+    password: {
+        type: String,
+        required: [true, 'Password is required'],
+        select: false // This will prevent the password from being returned in queries by default
+    },
+    description: {
+        type: String,
+        default: '',
+        maxLength: [500, 'Description cannot exceed 500 characters']
+    },
+    imageUrl: {
+        type: String,
+        default: ''
+    }
+});
+
+
+module.exports = mongoose.model('User', userSchema);
+
+================
+File: src/Routes/accountRoutes.js
+================
+const express = require('express');
+const router = express.Router();
+const accountController = require('../Controllers/accountController');
+const { validateRegister, validateLogin } = require('../Validators/accountValidator');
+const authenticate = require('../Middelware/authenticate');
+
+router.post('/register', validateRegister, accountController.handleRegister);
+router.post('/login', validateLogin, accountController.handleLogin);
+router.post('/logout', accountController.handleLogout);
+router.get('/me', authenticate, accountController.handleCurrentUser);
+
+module.exports = router;
+
+================
+File: src/utils/AppError.js
+================
+/** En domæne-/appikationsfejl med status til HTTP-grænsen.
+ * Bruges i service; selve modellen og repository kender ikke HTTP.
+ */
+class AppError extends Error {
+    constructor(message, status = 500) { super(message); this.name = 'AppError'; this.status = status; }
+}
+module.exports = AppError;
+
+================
+File: src/Validators/userValidator.js
+================
+const joi = require('joi');
+
+// Bliver ikke brugt, skal opdates så den
+// tager højde for update profil logik, IKKE create
+const userValidationSchema = joi.object({
+    username: joi.string().required(),
+    email: joi.string().email().required(),
+    password: joi.string().required(),
+})
+
+exports.validateUser = (req, res, next) => {
+    const {error} = userValidationSchema.validate(req.body);
+
+    if (error) {
+        return res.status(400).json({error: error.details[0].message});
+    }
+    next();
+}
+
+================
+File: src/Services/accountService.js
+================
+// register og login
+const userRepository = require('../Repositories/userRepository');
+const passwordHasher = require('../utils/passwordHasher');
+const AppError = require('../utils/AppError');
+
+const toSafeUser = (user) => ({
+    id: user._id,
+    username: user.username,
+    email: user.email,
+    imageUrl: user.imageUrl,
+    description: user.description ?? ''
+});
+
+exports.register = async ({ username, email, password }) => {
+    const normalizedEmail = email.trim().toLowerCase();
+
+    const existingUser = await userRepository.getUserByEmail(normalizedEmail);
+    if (existingUser) {
+        throw new AppError('Der findes allerede en bruger med denne email', 409);
+    }
+
+    const hashedPassword = await passwordHasher.hashPassword(password);
+
+    const newUser = await userRepository.createUser({
+        username: username.trim(),
+        email: normalizedEmail,
+        password: hashedPassword
+    });
+
+    if (!newUser) {
+        throw new AppError('Brugeren kunne ikke oprettes', 500);
+    }
+
+    return toSafeUser(newUser);
+};
+
+exports.login = async ({ email, password }) => {
+    const normalizedEmail = email.trim().toLowerCase();
+
+    const user = await userRepository.getUserByEmailWithPassword(normalizedEmail);
+
+    // Returnér samme fejl ved ukendt email og forkert password (forhindrer user enumeration)
+    if (!user) {
+        throw new AppError('Ugyldig email eller adgangskode', 401);
+    }
+
+    const isPasswordValid = await passwordHasher.comparePassword(password, user.password);
+    if (!isPasswordValid) {
+        throw new AppError('Ugyldig email eller adgangskode', 401);
+    }
+
+    return toSafeUser(user);
+};
+
+exports.getAuthenticatedUser = async (userId) => {
+    const user = await userRepository.getUserById(userId);
+    if (!user) {
+        throw new AppError('Brugeren findes ikke længere', 401);
+    }
+
+    return toSafeUser(user);
+};
+
+================
+File: src/Controllers/userController.js
+================
+const userService = require('../Services/userService');
+
+
+/* exports.handleCreateUser = async (req, res) => {
+    try {
+        const createUser = await userService.CreateUser(req.body);
+        return res.status(201).json({createUser});
+    } catch (error) {
+        res.status(404).json({error: error.message});
+    }
+} */
+
+
+exports.handleGetAllUsers = async (req, res) => {
+    try {
+        const users = await userService.GetAllUsers();
+        res.status(200).json({
+            data: users
+        })
+    } catch (err) {
+        res.status(500).json({
+            error: err
+        })
+    }
+}
+
+exports.handleGetUserById = async (req, res) => {
+    try {
+        const user = await userService.GetUserById(req.params.id);
+        return res.status(200).json({user})
+    } catch (error) {
+        res.status(404).json({error: error.message})
+    }
+}
+
+exports.handleUpdateUser = async (req, res) => {
+    try {
+        const updateUser = await userService.UpdateUser(req.body, req.params.id);
+        return res.status(201).json({updateUser});//200 eller 201?
+    } catch (error) {
+        res.status(404).json({error: error.message})
+    }
+}
+
+exports.handleDeleteUser = async (req, res) => {
+    try {
+        await userService.DeleteUser(req.params.id);
+        return res.status(204).json({message: "hej"})
+    } catch (error) {
+        res.status(404).json({error: error.message})
+    }
+}
+
+================
+File: src/Repositories/userRepository.js
+================
+const User = require('../Models/userModel');
+
+exports.createUser = async (user) => {
+    return await User.create(user);
+}
+
+exports.getAllUsers = async () => {
+    return await User.find()
+}
+
+exports.getUserById = async (id) => {
+    return await User.findById(id)
+}
+
+exports.updateUser = async (userData, id) => {
+    return await User.findByIdAndUpdate(id, {$set: userData, returnDocument: 'after', runValidators: true})
+}
+
+exports.deleteUser = async (id) => {
+    await User.findByIdAndDelete(id)
+}
+
+exports.getUserByEmail = async (email) => {
+    return await User.findOne({ email: email.toLowerCase()}); 
+}
+
+exports.getUserByEmailWithPassword = async (email) => {
+    return await User.findOne({ email: email.toLowerCase()}).select('+password') // This will include the password field in the result
+}
+
+================
+File: src/config/database.js
+================
+//Her er Database forbindelsen
+
+const mongoose = require('mongoose');
+
+const connectDB = async () => {
+    const connectionString =
+        process.env.MONGO_URI || process.env.MONGODB_URI;
+    if (!connectionString) throw new Error('MONGO_URI mangler i .env');
+    await mongoose.connect(connectionString);
+    console.log('MongoDB tilsluttet');
+};
+
+module.exports = connectDB;
+
+================
+File: src/Routes/userRoutes.js
+================
+const express = require('express');
+const router = express.Router();
+const userValidators = require("../validators/userValidator");
+const userController = require('../controllers/userController');
+const {validateId} = require("../Middelware/validateUser");
+
+
+// router.post('/', validateUserData,userValidators.validateUser, userController.handleCreateUser);
+router.get('/', userController.handleGetAllUsers);
+router.get('/:id', validateId,userController.handleGetUserById);
+router.put('/:id', validateId, userValidators.validateUser, userController.handleUpdateUser);
+router.delete('/:id', validateId,userValidators.validateUser, userController.handleDeleteUser);
+
+
+module.exports = router;
+
+================
+File: src/Services/userService.js
+================
+const userRepository = require('../Repositories/userRepository');
+const AppError = require('../utils/AppError');
+
+// CreateUser rykket til accountService.js.
+/* exports.CreateUser = async (newUserData) => {
+    const newUser = await userRepository.createUser(newUserData);
+    if (!newUser) {
+        throw new AppError('Karakteren blev ikke oprettet');
+    }
+    return newUser;
+} */
+
+/* exports.UpdateUser = async (newUserData, id) => {
+    const updatedUser = await userRepository.updateUser(newUserData, id);
+    if (!updatedUser) {
+        throw new AppError('Karakteren blev ikke opdateret');
+    }
+    return updatedUser;
+} */
+
+exports.DeleteUser = async (userId) => {
+    const user = await userRepository.deleteUser(userId);
+    
+    if (!user) {
+        throw new AppError('Karakteren blev ikke fundet');
+    }
+
+    return null;
+}
+
+exports.GetUserById = async (userId) => {
+    const user = await userRepository.getUserById(userId);
+    if (!user) {
+        throw new AppError('Karakteren blev ikke fundet');
+    }
+    return user;
+}
+
+exports.GetAllUsers = async () => {
+    return await userRepository.getAllUsers();
+}
+
+================
+File: server.js
+================
+require('dotenv').config();
+const app = require('./src/app');
+const connectDB = require('./src/config/database');
+const { assertJwtSecretConfigured } = require('./src/config/auth');
+const PORT = process.env.PORT || 3000;
+
+
+const start = async () => {
+    assertJwtSecretConfigured();
+    await connectDB();
+    app.listen(PORT, () => {
+        console.log(`Serveren kører på http://localhost:${PORT}`);
+    });
+};
+
+
+// void start() så der ikke er nogen floating promise warning i console,
+// hvis der er en fejl i start() og den ikke fanges
+void start().catch((error) => {
+    console.error('Serveren kunne ikke starte:', error.message);
+    process.exitCode = 1; // Valgfrit - sikre serveren ikke starter, hvis der ikke er forbindelse til databasen
+});
+
+================
+File: src/app.js
+================
+const express = require("express");
+const morgan = require("morgan");
+const cookieParser = require('cookie-parser');
+const userRouter = require('./Routes/userRoutes');
+const gameRouter = require('./Routes/gameRoutes');
+const accountRoutes = require("./Routes/accountRoutes");
+const profileRoutes = require("./Routes/profileRoutes");
+
+const notFoundHandler = require("./Middelware/notFoundHandler")
+const errorHandler = require("./Middelware/errorHandler")
+
+const app = express();
+
+app.use(morgan("dev"));
+app.use(express.json());
+app.use(cookieParser());
+app.use('/api/users', userRouter);
+app.use('/api/games', gameRouter);
+app.use('/api/account', accountRoutes);
+app.use('/api/profile', profileRoutes);
+
+
+app.use(express.static("public/static"))
+app.use(express.static("public"));
+
+app.use(notFoundHandler)
+app.use(errorHandler);
+
+module.exports = app;
+
+
+
+
+
+================================================================
+End of Codebase
+================================================================

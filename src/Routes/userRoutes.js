@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const userValidators = require("../validators/userValidator");
-const userController = require('../controllers/userController');
+const userValidators = require("../Validators/userValidator");
+const userController = require('../Controllers/userController');
 const {validateId} = require("../Middelware/validateUser");
 
 
@@ -13,6 +13,3 @@ router.delete('/:id', validateId,userValidators.validateUser, userController.han
 
 
 module.exports = router;
-
-
-
