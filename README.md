@@ -91,70 +91,76 @@ Logout fjerner cookien fra browseren, men tilbagekalder ikke en allerede udstedt
 # Automatiseret test
 
 ```mermaid
-flowchart TD
-    Client["1. Klient (Browser / Postman / public/*.js)"]
-    App["2. Express Global Middleware - src/app.js (morgan, express.json, cookieParser)"]
-    Routes["3. Express Routes - src/Routes/*.js (/api/account, /api/profile, /api/users, /api/games)"]
-    Static["Statiske filer - public/static & public/"]
-    NotFound["notFoundHandler.js"]
-    Auth["4a. authenticate.js - JWT fra auth_token cookie"]
-    Validate["4b. Validators & validateId - Joi / ObjectId"]
-    Controller["5. Controller-lag - src/Controllers/*.js"]
-    Service["6. Service-lag - src/Services/*.js (bcrypt, forretningslogik, DTO)"]
-    Repo["7. Repository-lag - src/Repositories/*.js"]
-    Model["8. Mongoose Models - userModel.js / gameModel.js"]
-    DB[("9. MongoDB Database (users, games)")]
-    ErrHandler["Central errorHandler.js"]
+flowchart TB
+    Client["Client (Browser / API)"]
 
-    ResOK(["HTTP Response: 200 OK / 201 Created / 204 No Content"])
-    Res400(["HTTP Response: 400 Bad Request"])
-    Res401(["HTTP Response: 401 Unauthorized"])
-    Res404(["HTTP Response: 404 Not Found (JSON eller HTML)"])
-    Res409(["HTTP Response: 409 Conflict"])
-    Res500(["HTTP Response: 500 Internal Server Error"])
+    subgraph Startup["Opstart (server.js)"]
+        Start["assertJwtSecretConfigured() + connectDB() -> MongoDB"]
+    end
 
-    Client -->|"HTTP Request (JSON + evt. cookie)"| App
-    App -->|"Ugyldigt JSON (entity.parse.failed)"| ErrHandler
-    App --> Routes
-    Routes -->|"Ingen API-match"| Static
-    Static -->|"Fil fundet"| ResOK
-    Static -->|"Ingen match"| NotFound
-    NotFound --> Res404
+    subgraph Express["Express Middleware (src/app.js)"]
+        Global["morgan('dev') -> express.json() -> cookieParser()"]
+        Static["express.static('public/static' & 'public')"]
+    end
 
-    Routes -->|"Beskyttet rute (/me)"| Auth
-    Routes -->|"Åben rute"| Validate
-    Auth -->|"Manglende / ugyldig / udløbet JWT"| Res401
-    Auth -->|"Gyldig JWT (req.auth.userId)"| Validate
-    Validate -->|"Joi-fejl"| Res400
-    Validate -->|"Ugyldigt ObjectId (next AppError 400)"| ErrHandler
-    Validate -->|"Gyldigt input"| Controller
+    subgraph Routing["API Routes"]
+        R_Acc["/api/account<br/>POST /register, /login, /logout<br/>GET /me"]
+        R_Prof["/api/profile<br/>GET /me, PATCH /me<br/>GET /:id"]
+        R_Game["/api/games<br/>GET /, /store, /:id"]
+        R_User["/api/users<br/>GET /, /:id<br/>PUT /:id, DELETE /:id"]
+    end
 
-    Controller -->|"POST /logout (clearCookie)"| ResOK
-    Controller --> Service
-    Service -->|"AppError (401 / 404 / 409 / 500)"| ErrHandler
-    Service --> Repo
-    Repo --> Model
-    Model -->|"ValidationError / CastError"| ErrHandler
-    Model --> DB
+    subgraph MW["Route Middleware & Validators"]
+        Auth["authenticate.js<br/>(tjekker auth_token cookie + JWT)"]
+        Joi["Joi Validators<br/>(validateRegister, validateLogin,<br/>validateUpdateDescription, validateUser)"]
+        ValId["validateUser.js: validateId<br/>(tjekker Mongo ObjectId)"]
+    end
 
-    DB -->|"Dokumenter retur"| Model
-    DB -->|"Duplicate Key (code 11000)"| ErrHandler
-    Model --> Repo
-    Repo --> Service
-    Service -->|"Sikker DTO (uden password)"| Controller
-    Controller -->|"JSON + evt. Set-Cookie (JWT)"| ResOK
-    Controller -->|"next(error)"| ErrHandler
+    subgraph Layers["Applikations- og Datalag"]
+        Ctrl["Controllers<br/>(account, profile, game, user)"]
+        Svc["Services<br/>(forretningslogik, bcrypt, JWT)"]
+        Repo["Repositories & Mongoose Models<br/>(userRepository/User, gameRepository/Game)"]
+    end
 
-    ErrHandler -->|"400 (AppError / ValidationError / CastError / JSON)"| Res400
-    ErrHandler -->|"401 (AppError)"| Res401
-    ErrHandler -->|"404 (AppError)"| Res404
-    ErrHandler -->|"409 (AppError / Mongo 11000)"| Res409
-    ErrHandler -->|"500 (Uventet fejl)"| Res500
+    DB[("MongoDB")]
 
-    ResOK -.->|"Tilbage til klient"| Client
-    Res400 -.-> Client
-    Res401 -.-> Client
-    Res404 -.-> Client
-    Res409 -.-> Client
-    Res500 -.-> Client
+    subgraph Errors["Fejl- og 404-håndtering"]
+        NotFound["notFoundHandler.js<br/>/api/* -> 404 JSON<br/>andet -> 404 page-not-found.html"]
+        ErrHandler["errorHandler.js<br/>AppError -> err.status (400/401/404/409/500)<br/>Mongoose 11000 -> 409<br/>ValidationError/CastError -> 400<br/>entity.parse.failed -> 400<br/>Uventet fejl -> 500"]
+    end
+
+    Client -->|HTTP Request| Global
+    Global -->|"Ugyldig JSON<br/>(entity.parse.failed)"| ErrHandler
+    Global --> R_Acc & R_Prof & R_Game & R_User
+    Global -->|"Ingen API-rute"| Static
+    Static -->|"Fil fundet (200)"| Client
+    Static -->|"Ingen fil"| NotFound
+
+    R_Acc & R_Prof & R_Game & R_User --> Auth & Joi & ValId
+    Auth & Joi & ValId -->|OK| Ctrl
+    R_Game -->|"Ingen MW"| Ctrl
+    R_Acc -->|"POST /logout<br/>(uden DB)"| Ctrl
+
+    Auth -.->|"Manglende/ugyldig JWT<br/>Direkte 401 JSON"| Client
+    Auth -.->|"Anden fejl -> next(err)"| ErrHandler
+    Joi -.->|"Valideringsfejl<br/>Direkte 400 JSON"| Client
+    ValId -.->|"Ugyldigt ID<br/>next(AppError 400)"| ErrHandler
+
+    Ctrl --> Svc
+    Svc --> Repo
+    Repo -->|"Mongoose query/write"| DB
+
+    DB -->|"Dokumenter / resultat"| Repo
+    Repo --> Svc
+    Svc --> Ctrl
+    Ctrl -->|"Succes Response<br/>200 OK | 201 Created | 204 No Content<br/>(+ evt. Set-Cookie/Clear-Cookie auth_token)"| Client
+
+    DB -.->|"DB-/Mongoose-fejl"| Repo
+    Repo -.-> Svc
+    Svc -.->|"throw AppError / Error"| Ctrl
+    Ctrl -.->|"account, profile, game:<br/>next(error)"| ErrHandler
+    Ctrl -.->|"userController:<br/>Direkte 404 / 500 JSON"| Client
+
+    NotFound -->|"404 Not Found"| Client
+    ErrHandler -->|"400 | 401 | 404 | 409 | 500 JSON"| Client
 ```
