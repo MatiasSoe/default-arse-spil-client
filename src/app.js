@@ -5,9 +5,10 @@ const userRouter = require('./Routes/userRoutes');
 const gameRouter = require('./Routes/gameRoutes');
 const accountRoutes = require("./Routes/accountRoutes");
 const profileRoutes = require("./Routes/profileRoutes");
+const storeRoutes = require("./Routes/html/storeRoutes");
 
-const notFoundHandler = require("./Middelware/notFoundHandler")
-const errorHandler = require("./Middelware/errorHandler")
+const notFoundHandler = require("./Middleware/notFoundHandler")
+const errorHandler = require("./Middleware/errorHandler")
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use('/api/users', userRouter);
 app.use('/api/games', gameRouter);
 app.use('/api/account', accountRoutes);
 app.use('/api/profile', profileRoutes);
+app.use('/store', storeRoutes);
 
 
 app.use(express.static("public/static"))
