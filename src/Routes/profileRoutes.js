@@ -4,10 +4,10 @@ const profileController = require('../Controllers/profileController');
 
 const authenticate = require('../Middelware/authenticate');
 const { validateId } = require('../Middelware/validateUser');
-const { validateUpdateDescription } = require('../Validators/profileValidator');
+const { validateUpdateData } = require('../Validators/profileValidator');
 
 router.get('/me', authenticate, profileController.handleGetMyProfile);
-router.patch('/me', authenticate, validateUpdateDescription, profileController.handleUpdateDescription);
+router.patch('/me', authenticate, validateUpdateData, profileController.handleUpdateProfile);
 router.get('/:id', validateId, profileController.handleGetProfileById);
 
 module.exports = router;

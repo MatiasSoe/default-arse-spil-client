@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="# ISSUE 8 commit. AcceptKriterier test fuldført. Bruger kan logge ind og ud, med status koder.">
+    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="Mere Readme.md changes med json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/accountController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/accountController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/accountService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/accountService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/authToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/authToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/profileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/profileController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/profileRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/profileRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/profileService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/profileService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Validators/profileValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validators/profileValidator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/Coffee/WebstormProjects/default-arse-spil-client" value="3MgV7jhxH9fuPb2Gr2LqlFTOSaZ" />
+    </persistenceIdMap>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -23,11 +29,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="docket-test" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -48,79 +49,92 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.344147736766291" />
-      <entry key="MS500" value="4.264691258219981" />
-      <entry key="S2" value="12.759309274498131" />
-      <entry key="S5" value="26.0572709332701" />
-      <entry key="S10" value="45.3934678049787" />
-      <entry key="S30" value="79.32824887615998" />
-      <entry key="S60" value="93.74329451120576" />
-      <entry key="M2" value="102.95709369109673" />
-      <entry key="M5" value="129.16081653285954" />
-      <entry key="M10" value="201.63880083058086" />
-      <entry key="M15" value="280.1710308738956" />
-      <entry key="M30" value="470.782732349967" />
-      <entry key="H1" value="676.929784408917" />
-      <entry key="H2" value="838.7172152516263" />
-      <entry key="H4" value="949.0477401606576" />
-      <entry key="D1" value="1202.1950658451076" />
-      <entry key="W1" value="1331.9513714603652" />
+      <entry key="MS100" value="1.0000000243753808" />
+      <entry key="MS500" value="1.0300214685001035" />
+      <entry key="S2" value="1.4574353733982819" />
+      <entry key="S5" value="1.9834753813112251" />
+      <entry key="S10" value="2.3676168850057735" />
+      <entry key="S30" value="2.7732023781678325" />
+      <entry key="S60" value="3.019401181672093" />
+      <entry key="M2" value="3.4458414999232496" />
+      <entry key="M5" value="5.408225807497409" />
+      <entry key="M10" value="10.132485337450053" />
+      <entry key="M15" value="17.275689549819788" />
+      <entry key="M30" value="46.18251847966867" />
+      <entry key="H1" value="92.40391318191934" />
+      <entry key="H2" value="136.59984660093917" />
+      <entry key="H4" value="167.67257871731516" />
+      <entry key="D1" value="199.78072703182573" />
+      <entry key="W1" value="205.95104677415446" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="2.365317299314106E-229" />
-      <entry key="S5" value="3.544506386870368E-92" />
-      <entry key="S10" value="1.8826859501442026E-46" />
-      <entry key="S30" value="5.731381187962481E-16" />
-      <entry key="S60" value="2.3940303231084328E-8" />
-      <entry key="M2" value="1.5472658625578648E-4" />
-      <entry key="M5" value="0.03013587677877392" />
-      <entry key="M10" value="0.22820170597665443" />
-      <entry key="M15" value="0.6936867387374326" />
-      <entry key="M30" value="3.379150603016326" />
-      <entry key="H1" value="8.57242742356962" />
-      <entry key="H2" value="13.980422328327363" />
-      <entry key="H4" value="18.567360825226505" />
-      <entry key="D1" value="36.62956347483516" />
-      <entry key="W1" value="47.58597966777733" />
+      <entry key="MS100" value="8.698999721329808E-16" />
+      <entry key="MS500" value="9.72509524506307E-4" />
+      <entry key="S2" value="0.17659299241113827" />
+      <entry key="S5" value="0.49979209908060945" />
+      <entry key="S10" value="0.706959757751889" />
+      <entry key="S30" value="0.8908370633004842" />
+      <entry key="S60" value="0.9441551203260904" />
+      <entry key="M2" value="0.9916472892252896" />
+      <entry key="M5" value="1.317846761738865" />
+      <entry key="M10" value="1.946272143232905" />
+      <entry key="M15" value="2.3894707938825563" />
+      <entry key="M30" value="3.181065314544433" />
+      <entry key="H1" value="4.022170267488652" />
+      <entry key="H2" value="4.775564725664622" />
+      <entry key="H4" value="5.309834838900966" />
+      <entry key="D1" value="5.871987215911516" />
+      <entry key="W1" value="5.981361668910707" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.266851887960685" />
-      <entry key="MS500" value="4.223145002497216" />
-      <entry key="S2" value="12.727288940960866" />
-      <entry key="S5" value="26.024963155180245" />
-      <entry key="S10" value="45.36041657412825" />
-      <entry key="S30" value="79.30660395602561" />
-      <entry key="S60" value="93.73014747147971" />
-      <entry key="M2" value="102.94993139984439" />
-      <entry key="M5" value="129.1870441631798" />
-      <entry key="M10" value="201.86319110966352" />
-      <entry key="M15" value="280.8597123077519" />
-      <entry key="M30" value="474.1525867357044" />
-      <entry key="H1" value="685.4909559494533" />
-      <entry key="H2" value="852.6885329522463" />
-      <entry key="H4" value="967.6090471139734" />
-      <entry key="D1" value="1238.822582946981" />
-      <entry key="W1" value="1379.5369678895338" />
+      <entry key="MS100" value="7.590490289673677E-8" />
+      <entry key="MS500" value="0.06302674547642652" />
+      <entry key="S2" value="0.9684829096134822" />
+      <entry key="S5" value="2.013865083792593" />
+      <entry key="S10" value="2.7539844808000034" />
+      <entry key="S30" value="3.52560464247238" />
+      <entry key="S60" value="3.88804146048629" />
+      <entry key="M2" value="4.395758140168145" />
+      <entry key="M5" value="6.700305485972543" />
+      <entry key="M10" value="12.05627974415192" />
+      <entry key="M15" value="19.645005704576448" />
+      <entry key="M30" value="49.348812891186334" />
+      <entry key="H1" value="96.41662417500719" />
+      <entry key="H2" value="141.3699198086113" />
+      <entry key="H4" value="172.97942773164942" />
+      <entry key="D1" value="205.6521775697546" />
+      <entry key="W1" value="211.93233073118833" />
     </decayedShown>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6,
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3MBUgmB7kiZXH3DGeNW5JLZhV4S" />
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="ensembleEnabled" value="true" />
+        <option name="ensembleTierId" value="balance" />
+        <option name="modeId" value="Ask" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="ensemble" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Docker.docker-compose.yml.api: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Node.js.seedGames.js.executor": "Run",
     "Node.js.server.js.executor": "Run",
@@ -129,7 +143,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "Issue-#10-Profil---Opret-profil-ændrings-side",
     "javascript.nodejs.core.library.configured.version": "24.21.0",
     "javascript.nodejs.core.library.typings.version": "24.19.2",
     "javascript.preferred.runtime.type.id": "node",
@@ -141,59 +156,27 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "C:/Users/Matia/AppData/Roaming/JetBrains/WebStorm2026.2/node/versions/24.21.0/node",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "ts.external.directory.path": "C:\\Users\\Coffee Enjoyer\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
+    "ts.external.directory.path": "C:\\Users\\Coffee\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Matia\IdeaProjects\Node\default-arse-spil-client" />
-      <recent name="C:\Users\Coffee Enjoyer\WebstormProjects\default-arse-spil-client\src\Services\profilService.js" />
-    </key>
-  </component>
   <component name="RunManager" selected="Node.js.server.js">
+    <configuration name="seedGames.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/FillDatabaseWithGames/seedGames.js" working-dir="$PROJECT_DIR$/FillDatabaseWithGames">
+      <method v="2" />
+    </configuration>
     <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.api: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="api" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.api: Compose Deployment" />
         <item itemvalue="Node.js.server.js" />
+        <item itemvalue="Node.js.seedGames.js" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-WS-263.7307.202" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
       </set>
     </attachedChunks>
   </component>
@@ -206,19 +189,7 @@
       <updated>1794823567332</updated>
       <workItem from="1794823568324" duration="5230000" />
       <workItem from="1795084392323" duration="217000" />
-      <workItem from="1795426202193" duration="2474000" />
-      <workItem from="1795429030452" duration="435000" />
-      <workItem from="1795429484288" duration="409000" />
-      <workItem from="1795429929572" duration="425000" />
-      <workItem from="1795430366325" duration="30000" />
-      <workItem from="1795430421735" duration="379000" />
-      <workItem from="1795430868569" duration="878000" />
-      <workItem from="1795431854422" duration="85000" />
-      <workItem from="1795432369532" duration="12000" />
-      <workItem from="1795433910472" duration="26000" />
-      <workItem from="1795435895385" duration="3955000" />
-      <workItem from="1795508545329" duration="311000" />
-      <workItem from="1795690620225" duration="2776000" />
+      <workItem from="1795426202193" duration="764000" />
     </task>
     <task id="LOCAL-00001" summary="Opsat struktur">
       <option name="closed" value="true" />
@@ -244,54 +215,41 @@
       <option name="project" value="LOCAL" />
       <updated>1794905805807</updated>
     </task>
-    <task id="LOCAL-00004" summary="Opsat Database fill af spil">
+    <task id="LOCAL-00004" summary="REST-endpoints data">
       <option name="closed" value="true" />
-      <created>1795428383718</created>
+      <created>1795683796584</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1795428383718</updated>
+      <updated>1795683796584</updated>
     </task>
-    <task id="LOCAL-00005" summary="Lavet create user igenem lagende  model,repository,service,controller,route">
+    <task id="LOCAL-00005" summary="Mere Readme.md changes">
       <option name="closed" value="true" />
-      <created>1795438129614</created>
+      <created>1795685093251</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1795438129614</updated>
+      <updated>1795685093251</updated>
     </task>
-    <task id="LOCAL-00006" summary="tilføjet AppError i userService">
+    <task id="LOCAL-00006" summary="Mere Readme.md changes med json">
       <option name="closed" value="true" />
-      <created>1795438513879</created>
+      <created>1795685146003</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1795438513879</updated>
+      <updated>1795685146003</updated>
     </task>
-    <task id="LOCAL-00007" summary="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController.">
-      <option name="closed" value="true" />
-      <created>1795508463818</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1795508463818</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
-    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Opsat struktur" />
-    <MESSAGE value="Opsat Database fill af spil" />
-    <MESSAGE value="Lavet create user igenem lagende  model,repository,service,controller,route" />
-    <MESSAGE value="tilføjet AppError i userService" />
-    <MESSAGE value="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController." />
-    <option name="LAST_COMMIT_MESSAGE" value="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController." />
+    <MESSAGE value="REST-endpoints data" />
+    <MESSAGE value="Mere Readme.md changes" />
+    <MESSAGE value="Mere Readme.md changes med json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mere Readme.md changes med json" />
   </component>
 </project>

@@ -30,4 +30,13 @@ exports.handleUpdateDescription = async (req, res, next) => {
     }
 };
 
+exports.handleUpdateProfile = async (req, res, next) => {
+    try {
+        const profile = await profileService.UpdateProfile(req.body, req.auth.userId);
+        res.status(200).json({ profile });
+    } catch (error) {
+        next(error);
+    }
+};
+
 //ikke nogen generel update metode endnu
