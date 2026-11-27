@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(data);
 
             // Redirect til login
-            window.location.href = "/login.html";
+            window.location.href = "/login/";
 
         } catch (error) {
             console.error(error);

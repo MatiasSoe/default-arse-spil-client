@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(data);
 
             // Redirect til store for nu
-            window.location.href = "/store/";
+            window.location.href = "/store";
 
         } catch (error) {
             console.error(error);
