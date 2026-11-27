@@ -1,0 +1,164 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9a1c5227-53c3-4f15-950e-e687b63a8a66\" name=\"Changes\" comment=\"# ISSUE 8 commit. AcceptKriterier test fuldført. Bruger kan logge ind og ud, med status koder.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Controllers/profileController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controllers/profileController.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Routes/profileRoutes.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Routes/profileRoutes.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Services/profileService.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Services/profileService.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Validators/userValidator.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Validators/userValidator.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;MatiasSoe&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/MatiasSoe/default-arse-spil-client.git&quot;,\r\n    &quot;accountId&quot;: &quot;ebf74e96-64db-48f2-b386-97706ceee21b&quot;\r\n  }\r\n}</component>\r\n  <component name=\"McpProjectServerCommands\">\r\n    <commands />\r\n    <urls />\r\n  </component>\r\n  <component name=\"NextEditCompletionFeaturesState\">\r\n    <decayedCancelled>\r\n      <entry key=\"MS100\" value=\"1.4041808518110819\" />\r\n      <entry key=\"MS500\" value=\"2.9510649164040785\" />\r\n      <entry key=\"S2\" value=\"4.9285225806232145\" />\r\n      <entry key=\"S5\" value=\"7.023086981231128\" />\r\n      <entry key=\"S10\" value=\"14.233871044559224\" />\r\n      <entry key=\"S30\" value=\"46.2461905402297\" />\r\n      <entry key=\"S60\" value=\"69.28845636459306\" />\r\n      <entry key=\"M2\" value=\"90.35872345391311\" />\r\n      <entry key=\"M5\" value=\"136.33535795738052\" />\r\n      <entry key=\"M10\" value=\"232.58721629129832\" />\r\n      <entry key=\"M15\" value=\"335.92149317137375\" />\r\n      <entry key=\"M30\" value=\"604.43915007633\" />\r\n      <entry key=\"H1\" value=\"932.6636190690131\" />\r\n      <entry key=\"H2\" value=\"1217.9771589069455\" />\r\n      <entry key=\"H4\" value=\"1418.6546083920587\" />\r\n      <entry key=\"D1\" value=\"1767.288543437548\" />\r\n      <entry key=\"W1\" value=\"1918.0700053746164\" />\r\n    </decayedCancelled>\r\n    <decayedSelected>\r\n      <entry key=\"MS100\" value=\"0.0\" />\r\n      <entry key=\"MS500\" value=\"4.4662698565159455E-152\" />\r\n      <entry key=\"S2\" value=\"1.4537383252881032E-38\" />\r\n      <entry key=\"S5\" value=\"7.328152458048735E-16\" />\r\n      <entry key=\"S10\" value=\"2.7070560500382576E-8\" />\r\n      <entry key=\"S30\" value=\"0.0030026110786294975\" />\r\n      <entry key=\"S60\" value=\"0.05479608634409472\" />\r\n      <entry key=\"M2\" value=\"0.23408564025696177\" />\r\n      <entry key=\"M5\" value=\"0.5597204207805418\" />\r\n      <entry key=\"M10\" value=\"0.7701488755524842\" />\r\n      <entry key=\"M15\" value=\"0.9706870405362946\" />\r\n      <entry key=\"M30\" value=\"2.4617348796451393\" />\r\n      <entry key=\"H1\" value=\"6.766090874747354\" />\r\n      <entry key=\"H2\" value=\"12.488897327270731\" />\r\n      <entry key=\"H4\" value=\"17.837225760144488\" />\r\n      <entry key=\"D1\" value=\"37.03953781108607\" />\r\n      <entry key=\"W1\" value=\"48.475805667572494\" />\r\n    </decayedSelected>\r\n    <decayedShown>\r\n      <entry key=\"MS100\" value=\"1.2568865577010384\" />\r\n      <entry key=\"MS500\" value=\"2.892160744729975\" />\r\n      <entry key=\"S2\" value=\"4.9059706324648635\" />\r\n      <entry key=\"S5\" value=\"7.010965998399947\" />\r\n      <entry key=\"S10\" value=\"14.222056877640531\" />\r\n      <entry key=\"S30\" value=\"46.23668911330647\" />\r\n      <entry key=\"S60\" value=\"69.33219589147677\" />\r\n      <entry key=\"M2\" value=\"90.58252419794037\" />\r\n      <entry key=\"M5\" value=\"136.88669546199054\" />\r\n      <entry key=\"M10\" value=\"233.35011620934455\" />\r\n      <entry key=\"M15\" value=\"336.88524085783666\" />\r\n      <entry key=\"M30\" value=\"606.8926187791824\" />\r\n      <entry key=\"H1\" value=\"939.4196973838019\" />\r\n      <entry key=\"H2\" value=\"1230.4572517076917\" />\r\n      <entry key=\"H4\" value=\"1436.4856545627356\" />\r\n      <entry key=\"D1\" value=\"1804.3259486066825\" />\r\n      <entry key=\"W1\" value=\"1966.5454115498862\" />\r\n    </decayedShown>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"QODANA_PROBLEMS_VIEW_TAB\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6,\r\n  &quot;fromUser&quot;: false\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3MBUgmB7kiZXH3DGeNW5JLZhV4S\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Docker.docker-compose.yml.api: Compose Deployment.executor\": \"Run\",\r\n    \"Docker.docker-compose.yml: Compose Deployment.executor\": \"Run\",\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"Node.js.seedGames.js.executor\": \"Run\",\r\n    \"Node.js.server.js.executor\": \"Run\",\r\n    \"RunOnceActivity.MCP Project settings loaded\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"RunOnceActivity.typescript.service.memoryLimit.init\": \"true\",\r\n    \"codeWithMe.voiceChat.enabledByDefault\": \"false\",\r\n    \"git-widget-placeholder\": \"Issue-#17-Bibliotek---Se-alle-spil-i-bibliotek\",\r\n    \"javascript.nodejs.core.library.configured.version\": \"24.21.0\",\r\n    \"javascript.nodejs.core.library.typings.version\": \"24.19.2\",\r\n    \"javascript.preferred.runtime.type.id\": \"node\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.jshint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.jshint\": \"\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_interpreter_path\": \"C:/Users/Matia/AppData/Roaming/JetBrains/WebStorm2026.2/node/versions/24.21.0/node\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"advanced.settings\",\r\n    \"ts.external.directory.path\": \"C:\\\\Program Files\\\\JetBrains\\\\WebStorm 2026.2.1\\\\plugins\\\\javascript-plugin\\\\jsLanguageServicesImpl\\\\external\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Matia\\IdeaProjects\\Node\\default-arse-spil-client\" />\r\n      <recent name=\"C:\\Users\\Coffee Enjoyer\\WebstormProjects\\default-arse-spil-client\\src\\Services\\profilService.js\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Node.js.server.js\">\r\n    <configuration name=\"server.js\" type=\"NodeJSConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\" path-to-js-file=\"$PROJECT_DIR$/server.js\" working-dir=\"$PROJECT_DIR$\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"docker-deploy\" factoryName=\"docker-compose.yml\" temporary=\"true\">\r\n      <deployment type=\"docker-compose.yml\">\r\n        <settings />\r\n      </deployment>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"docker-compose.yml: Compose Deployment\" type=\"docker-deploy\" factoryName=\"docker-compose.yml\" temporary=\"true\" server-name=\"Docker\">\r\n      <deployment type=\"docker-compose.yml\">\r\n        <settings>\r\n          <option name=\"sourceFilePath\" value=\"docker-compose.yml\" />\r\n        </settings>\r\n      </deployment>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"docker-compose.yml.api: Compose Deployment\" type=\"docker-deploy\" factoryName=\"docker-compose.yml\" temporary=\"true\" server-name=\"Docker\">\r\n      <deployment type=\"docker-compose.yml\">\r\n        <settings>\r\n          <option name=\"services\">\r\n            <list>\r\n              <option value=\"api\" />\r\n            </list>\r\n          </option>\r\n          <option name=\"sourceFilePath\" value=\"docker-compose.yml\" />\r\n        </settings>\r\n      </deployment>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Node.js.server.js\" />\r\n        <item itemvalue=\"Docker.docker-compose.yml: Compose Deployment\" />\r\n        <item itemvalue=\"Docker.docker-compose.yml.api: Compose Deployment\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-WS-263.7307.202\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9a1c5227-53c3-4f15-950e-e687b63a8a66\" name=\"Changes\" comment=\"\" />\r\n      <created>1794823567332</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1794823567332</updated>\r\n      <workItem from=\"1794823568324\" duration=\"5230000\" />\r\n      <workItem from=\"1795084392323\" duration=\"217000\" />\r\n      <workItem from=\"1795426202193\" duration=\"2474000\" />\r\n      <workItem from=\"1795429030452\" duration=\"435000\" />\r\n      <workItem from=\"1795429484288\" duration=\"409000\" />\r\n      <workItem from=\"1795429929572\" duration=\"425000\" />\r\n      <workItem from=\"1795430366325\" duration=\"30000\" />\r\n      <workItem from=\"1795430421735\" duration=\"379000\" />\r\n      <workItem from=\"1795430868569\" duration=\"878000\" />\r\n      <workItem from=\"1795431854422\" duration=\"85000\" />\r\n      <workItem from=\"1795432369532\" duration=\"12000\" />\r\n      <workItem from=\"1795433910472\" duration=\"26000\" />\r\n      <workItem from=\"1795435895385\" duration=\"3955000\" />\r\n      <workItem from=\"1795508545329\" duration=\"311000\" />\r\n      <workItem from=\"1795690620225\" duration=\"2776000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Opsat struktur\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1794903633396</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1794903633396</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Opsat struktur\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1794904221397</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1794904221397</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Opsat struktur\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1794905805807</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1794905805807</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Opsat Database fill af spil\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1795428383718</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1795428383718</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Lavet create user igenem lagende  model,repository,service,controller,route\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1795438129614</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1795438129614</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"tilføjet AppError i userService\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1795438513879</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1795438513879</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1795508463818</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1795508463818</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\"*.conf\" />\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Opsat struktur\" />\r\n    <MESSAGE value=\"Opsat Database fill af spil\" />\r\n    <MESSAGE value=\"Lavet create user igenem lagende  model,repository,service,controller,route\" />\r\n    <MESSAGE value=\"tilføjet AppError i userService\" />\r\n    <MESSAGE value=\"tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision adf590d37d964f421158c51e72cc27929361e41b)
++++ b/.idea/workspace.xml	(date 1795776956415)
+@@ -4,13 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="# ISSUE 8 commit. AcceptKriterier test fuldført. Bruger kan logge ind og ud, med status koder.">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controllers/profileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/profileController.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Routes/profileRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/profileRoutes.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Services/profileService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/profileService.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Validators/userValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validators/userValidator.js" afterDir="false" />
+-    </list>
++    <list default="true" id="9a1c5227-53c3-4f15-950e-e687b63a8a66" name="Changes" comment="Lavet så man kan se spil der er i ens bibliotek + se read me Issue#17" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -49,61 +43,61 @@
+   </component>
+   <component name="NextEditCompletionFeaturesState">
+     <decayedCancelled>
+-      <entry key="MS100" value="1.4041808518110819" />
+-      <entry key="MS500" value="2.9510649164040785" />
+-      <entry key="S2" value="4.9285225806232145" />
+-      <entry key="S5" value="7.023086981231128" />
+-      <entry key="S10" value="14.233871044559224" />
+-      <entry key="S30" value="46.2461905402297" />
+-      <entry key="S60" value="69.28845636459306" />
+-      <entry key="M2" value="90.35872345391311" />
+-      <entry key="M5" value="136.33535795738052" />
+-      <entry key="M10" value="232.58721629129832" />
+-      <entry key="M15" value="335.92149317137375" />
+-      <entry key="M30" value="604.43915007633" />
+-      <entry key="H1" value="932.6636190690131" />
+-      <entry key="H2" value="1217.9771589069455" />
+-      <entry key="H4" value="1418.6546083920587" />
+-      <entry key="D1" value="1767.288543437548" />
+-      <entry key="W1" value="1918.0700053746164" />
++      <entry key="MS100" value="1.000001583587059" />
++      <entry key="MS500" value="1.102994716136507" />
++      <entry key="S2" value="2.687739153849999" />
++      <entry key="S5" value="5.9487419878946035" />
++      <entry key="S10" value="10.687811073251279" />
++      <entry key="S30" value="21.868659816790963" />
++      <entry key="S60" value="33.30259613400611" />
++      <entry key="M2" value="56.905261387257305" />
++      <entry key="M5" value="119.57696990717109" />
++      <entry key="M10" value="220.5609433245407" />
++      <entry key="M15" value="324.3826260710816" />
++      <entry key="M30" value="598.3469071385834" />
++      <entry key="H1" value="942.1755373314318" />
++      <entry key="H2" value="1247.0403576052997" />
++      <entry key="H4" value="1463.4385705819188" />
++      <entry key="D1" value="1829.6582015155223" />
++      <entry key="W1" value="1984.3518947336447" />
+     </decayedCancelled>
+     <decayedSelected>
+       <entry key="MS100" value="0.0" />
+-      <entry key="MS500" value="4.4662698565159455E-152" />
+-      <entry key="S2" value="1.4537383252881032E-38" />
+-      <entry key="S5" value="7.328152458048735E-16" />
+-      <entry key="S10" value="2.7070560500382576E-8" />
+-      <entry key="S30" value="0.0030026110786294975" />
+-      <entry key="S60" value="0.05479608634409472" />
+-      <entry key="M2" value="0.23408564025696177" />
+-      <entry key="M5" value="0.5597204207805418" />
+-      <entry key="M10" value="0.7701488755524842" />
+-      <entry key="M15" value="0.9706870405362946" />
+-      <entry key="M30" value="2.4617348796451393" />
+-      <entry key="H1" value="6.766090874747354" />
+-      <entry key="H2" value="12.488897327270731" />
+-      <entry key="H4" value="17.837225760144488" />
+-      <entry key="D1" value="37.03953781108607" />
+-      <entry key="W1" value="48.475805667572494" />
++      <entry key="MS500" value="0.0" />
++      <entry key="S2" value="2.9064221287176733E-87" />
++      <entry key="S5" value="2.428530021470824E-35" />
++      <entry key="S10" value="4.928011791250939E-18" />
++      <entry key="S30" value="1.7017297032896391E-6" />
++      <entry key="S60" value="0.0013045036233332715" />
++      <entry key="M2" value="0.03611791298429767" />
++      <entry key="M5" value="0.2650393157289331" />
++      <entry key="M10" value="0.5299614266094599" />
++      <entry key="M15" value="0.7565871276057083" />
++      <entry key="M30" value="2.1733573358341567" />
++      <entry key="H1" value="6.357447107029457" />
++      <entry key="H2" value="12.105885440233818" />
++      <entry key="H4" value="17.56157817794498" />
++      <entry key="D1" value="36.94351925824561" />
++      <entry key="W1" value="48.45783353556262" />
+     </decayedSelected>
+     <decayedShown>
+-      <entry key="MS100" value="1.2568865577010384" />
+-      <entry key="MS500" value="2.892160744729975" />
+-      <entry key="S2" value="4.9059706324648635" />
+-      <entry key="S5" value="7.010965998399947" />
+-      <entry key="S10" value="14.222056877640531" />
+-      <entry key="S30" value="46.23668911330647" />
+-      <entry key="S60" value="69.33219589147677" />
+-      <entry key="M2" value="90.58252419794037" />
+-      <entry key="M5" value="136.88669546199054" />
+-      <entry key="M10" value="233.35011620934455" />
+-      <entry key="M15" value="336.88524085783666" />
+-      <entry key="M30" value="606.8926187791824" />
+-      <entry key="H1" value="939.4196973838019" />
+-      <entry key="H2" value="1230.4572517076917" />
+-      <entry key="H4" value="1436.4856545627356" />
+-      <entry key="D1" value="1804.3259486066825" />
+-      <entry key="W1" value="1966.5454115498862" />
++      <entry key="MS100" value="0.9659378373432045" />
++      <entry key="MS500" value="1.0949868632907835" />
++      <entry key="S2" value="2.681433648334799" />
++      <entry key="S5" value="5.942838029573764" />
++      <entry key="S10" value="10.68159137296569" />
++      <entry key="S30" value="21.861692896175267" />
++      <entry key="S60" value="33.29671506091621" />
++      <entry key="M2" value="56.93399069687538" />
++      <entry key="M5" value="119.83465611038119" />
++      <entry key="M10" value="221.08397691958328" />
++      <entry key="M15" value="325.13244947787643" />
++      <entry key="M30" value="600.5122563337201" />
++      <entry key="H1" value="948.5232128677551" />
++      <entry key="H2" value="1259.1375244808075" />
++      <entry key="H4" value="1480.993972083664" />
++      <entry key="D1" value="1866.5995781522763" />
++      <entry key="W1" value="2032.8093267076738" />
+     </decayedShown>
+   </component>
+   <component name="ProblemsViewState">
+@@ -277,7 +271,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1795508463818</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="Lavet så man kan se spil der er i ens bibliotek + se read me Issue#17">
++      <option name="closed" value="true" />
++      <created>1795776616442</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1795776616442</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -293,6 +295,7 @@
+     <MESSAGE value="Lavet create user igenem lagende  model,repository,service,controller,route" />
+     <MESSAGE value="tilføjet AppError i userService" />
+     <MESSAGE value="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController." />
+-    <option name="LAST_COMMIT_MESSAGE" value="tilføjet middleware, validateUser, og tilføjet til userRoutes og færdiggjort userController." />
++    <MESSAGE value="Lavet så man kan se spil der er i ens bibliotek + se read me Issue#17" />
++    <option name="LAST_COMMIT_MESSAGE" value="Lavet så man kan se spil der er i ens bibliotek + se read me Issue#17" />
+   </component>
+ </project>
+\ No newline at end of file

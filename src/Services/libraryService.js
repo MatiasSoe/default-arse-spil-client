@@ -12,15 +12,16 @@ const toOwnedGame = (userGame) => ({
     purchasedAt: userGame.purchasedAt
 });
 
-exports.getOwnedGames = async (userId) => {
+exports.getOwnedGames = async (userId, search) => {
     const user = await userRepository.getUserById(userId);
     if (!user) {
         throw new AppError('Brugeren blev ikke fundet', 404);
     }
 
-    const userGames = await userGameRepository.findOwnedGamesByUserId(userId);
+    const normalizedSearch = typeof search === 'string' ? search.trim() : '';
+    const userGames = await userGameRepository.findOwnedGamesByUserId(userId, normalizedSearch);
 
-    // Filtrér evt. slettede spil fra (hvor populate giver null)
+    // Filtrér evt. slettede eller ikke-matchende spil fra (hvor populate giver null)
     return userGames
         .filter((entry) => entry.game_id)
         .map(toOwnedGame);
