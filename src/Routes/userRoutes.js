@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userValidators = require("../validators/userValidator");
 const userController = require('../controllers/userController');
-const {validateId} = require("../Middelware/validateUser");
+const {validateId} = require("../Middleware/validateUser");
 
 
 // router.post('/', validateUserData,userValidators.validateUser, userController.handleCreateUser);

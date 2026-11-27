@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const AppError = require('./AppError')
 const {
     AUTH_TOKEN_TTL_SECONDS,
     getJwtSecret
