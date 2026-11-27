@@ -42,10 +42,10 @@ exports.handleUpdateProfile = async (req, res, next) => {
 
 exports.handleGetMyGames = async (req, res, next) => {
     try {
-        const games = await libraryService.getOwnedGames(req.auth.userId);
+        const search = req.validatedQuery ? req.validatedQuery.search : req.query.search;
+        const games = await libraryService.getOwnedGames(req.auth.userId, search);
         res.status(200).json({ games });
     } catch (error) {
         next(error);
     }
 };
-

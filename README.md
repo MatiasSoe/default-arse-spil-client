@@ -50,6 +50,9 @@ project-root/
 | GET | `/api/account/me` | Login påkrævet| 401 unauthorized |
 | PATCH | `/api/profile/me` | Ændre desciption| 200 OK |
 | PATCH | `/api/profile/me` | Description for lang | 400 bad request  |
+| GET | `/api/profile/me/games` | Hent alle spil i eget bibliotek | 200 OK |
+| GET | `/api/profile/me/games?search=ow` | Søg efter spil i eget bibliotek der starter med `ow` | 200 OK |
+| GET | `/api/profile/me/games?search=...` | Ugyldig query-parameter | 400 bad request |
 
 
 
@@ -105,14 +108,14 @@ flowchart TB
 
     subgraph Routing["API Routes"]
         R_Acc["/api/account<br/>POST /register, /login, /logout<br/>GET /me"]
-        R_Prof["/api/profile<br/>GET /me, PATCH /me<br/>GET /:id"]
+        R_Prof["/api/profile<br/>GET /me, PATCH /me<br/>GET /me/games, GET /:id"]
         R_Game["/api/games<br/>GET /, /store, /:id"]
         R_User["/api/users<br/>GET /, /:id<br/>PUT /:id, DELETE /:id"]
     end
 
     subgraph MW["Route Middleware & Validators"]
         Auth["authenticate.js<br/>(tjekker auth_token cookie + JWT)"]
-        Joi["Joi Validators<br/>(validateRegister, validateLogin,<br/>validateUpdateDescription, validateUser)"]
+        Joi["Joi Validators<br/>(validateRegister, validateLogin,<br/>validateUpdateDescription, validateUser,<br/>validateLibraryQuery)"]
         ValId["validateUser.js: validateId<br/>(tjekker Mongo ObjectId)"]
     end
 
@@ -179,3 +182,9 @@ MongoDB collections
 }
 ```
 Tjek selv efter objectID på bruger og spil.
+
+# Issue 21 søg i bibliotek baseret på navn
+* **GET** `http://localhost:3000/api/profile/me/games?search=ow` (kræver login-cookie)
+* Returnerer `200 OK` med `{ "games": [...] }` indeholdende alle spil i brugerens bibliotek, hvis `title` starter med søgeteksten (case-insensitive).
+* Hvis `?search` udelades eller er tom, returneres alle spil i brugerens bibliotek.
+* Hvis ingen spil matcher, returneres `200 OK` med `{ "games": [] }`.
