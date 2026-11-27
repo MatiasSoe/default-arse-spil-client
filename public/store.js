@@ -15,7 +15,12 @@ const loadStoreGames = async () => {
         <article class="game-card store-card">
           <div class="game-cover" style="background-image: url('${game.thumbnail}');">
             <div class="cover-overlay">
-              <button class="btn btn-primary" data-id="${game.id}">Køb</button>
+                <div>
+                    <button class="btn btn-primary" data-id="${game.id}">Køb</button>
+                </div>
+                <div>
+                    <button class="btn btn-secondary info-button" data-id="${game.id}">Info</button>
+                </div>
             </div>
           </div>
           <div class="game-info">
@@ -36,6 +41,14 @@ const loadStoreGames = async () => {
         console.error('Fejl ved indlæsning af store:', error);
         container.innerHTML = '<p>Kunne ikke indlæse spillene lige nu.</p>';
     }
+
+    container.addEventListener('click', (event) => {
+        const button = event.target.closest('.info-button');
+        if (!button) return;
+
+        window.location.href =
+            `/gameInfo.html?id=${encodeURIComponent(button.dataset.id)}`;
+    });
 }
 
 loadStoreGames();

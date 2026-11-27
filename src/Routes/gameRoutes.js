@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/', gameController.handleGetAllGames);
 router.get('/store', gameController.getStoreGames);
+router.get('/store/:id', gameController.getGameById);
 router.get('/:id', gameController.getGameById);
 
 
