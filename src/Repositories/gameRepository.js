@@ -5,7 +5,7 @@ const findAll = async () => {
     return await Game.find();
 };
 
-const findById = async () => {
+const findById = async (id) => {
     return await Game.findOne ({ id: Number(id) });
 };
 
