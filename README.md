@@ -164,3 +164,18 @@ flowchart TB
     NotFound -->|"404 Not Found"| Client
     ErrHandler -->|"400 | 401 | 404 | 409 | 500 JSON"| Client
 ```
+
+# Issue 17 se bibliotek + spil på user
+MongoDB collections
+1. games
+2. users
+3. user_games
+* Indsæt dette i user_games collection for at teste i postman /get (http://localhost:3000/api/profile/me/games)
+```
+{
+  "user_id": { "$oid": "6b095e68c42d264eed58f0bd" },
+  "game_id": { "$oid": "6b040923d297004478049380" },
+  "purchasedAt": { "$date": "2026-11-27T11:45:00.000Z" }
+}
+```
+Tjek selv efter objectID på bruger og spil.

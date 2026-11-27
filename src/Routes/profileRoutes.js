@@ -8,6 +8,7 @@ const { validateUpdateData } = require('../Validators/profileValidator');
 
 router.get('/me', authenticate, profileController.handleGetMyProfile);
 router.patch('/me', authenticate, validateUpdateData, profileController.handleUpdateProfile);
+router.get('/me/games', authenticate, profileController.handleGetMyGames);
 router.get('/:id', validateId, profileController.handleGetProfileById);
 
 module.exports = router;
