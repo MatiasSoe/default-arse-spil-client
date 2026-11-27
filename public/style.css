@@ -485,11 +485,21 @@ a {
     gap: 16px;
     overflow-x: auto;
     padding-bottom: 10px;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) var(--bg-surface);
 }
 
 .store-row::-webkit-scrollbar {
-    display: none;
+    height: 8px;
+}
+
+.store-row::-webkit-scrollbar-track {
+    background: var(--bg-surface);
+}
+
+.store-row::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 4px;
 }
 
 .store-card {
