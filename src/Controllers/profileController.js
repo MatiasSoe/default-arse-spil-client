@@ -1,5 +1,5 @@
 const profileService = require('../Services/profileService');
-
+const libraryService = require('../Services/libraryService');
 // min profil
 exports.handleGetMyProfile = async (req, res, next) => {
     try {
@@ -23,6 +23,7 @@ exports.handleGetProfileById = async (req, res, next) => {
 
 exports.handleUpdateDescription = async (req, res, next) => {
     try {
+
         const profile = await profileService.UpdateUser(req.body.description, req.auth.userId);
         res.status(200).json({ profile });
     } catch (error) {
@@ -39,4 +40,12 @@ exports.handleUpdateProfile = async (req, res, next) => {
     }
 };
 
-//ikke nogen generel update metode endnu
+exports.handleGetMyGames = async (req, res, next) => {
+    try {
+        const games = await libraryService.getOwnedGames(req.auth.userId);
+        res.status(200).json({ games });
+    } catch (error) {
+        next(error);
+    }
+};
+

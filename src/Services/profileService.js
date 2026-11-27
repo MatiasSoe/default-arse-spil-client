@@ -17,10 +17,10 @@ exports.getProfile = async (userId) => {
     return toProfile(user);
 };
 
-exports.UpdateProfile = async (profileData, userId) => {
-    const updatedUser = await userRepository.updateUser(profileData, userId);
+exports.UpdateUser = async (description, userId) => {
+    const updatedUser = await userRepository.updateUser({ description }, userId);
     if (!updatedUser) {
-        throw new AppError('Profilen blev ikke opdateret', 400);
+        throw new AppError('Karakteren blev ikke opdateret');
     }
     return toProfile(updatedUser);
 }
