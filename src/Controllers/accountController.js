@@ -1,5 +1,4 @@
 const accountService = require('../Services/accountService');
-const authToken = require('../utils/authToken');
 const {
     AUTH_COOKIE_NAME,
     getAuthCookieOptions
@@ -19,8 +18,7 @@ exports.handleRegister = async (req, res, next) => {
 
 exports.handleLogin = async (req, res, next) => {
     try {
-        const user = await accountService.login(req.body);
-        const token = authToken.createAccessToken(user.id);
+        const { user, token } = await accountService.login(req.body);
         res.cookie(AUTH_COOKIE_NAME, token, getAuthCookieOptions());
         res.status(200).json({
             message: 'Login gennemført',

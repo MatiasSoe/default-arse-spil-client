@@ -1,6 +1,7 @@
 // register og login
 const userRepository = require('../Repositories/userRepository');
 const passwordHasher = require('../utils/passwordHasher');
+const authToken = require('../utils/authToken');
 const AppError = require('../utils/AppError');
 
 const toSafeUser = (user) => ({
@@ -49,7 +50,10 @@ exports.login = async ({ email, password }) => {
         throw new AppError('Ugyldig email eller adgangskode', 401);
     }
 
-    return toSafeUser(user);
+    const safeUser = toSafeUser(user);
+    const token = authToken.createAccessToken(safeUser.id);
+
+    return { user: safeUser, token };
 };
 
 exports.getAuthenticatedUser = async (userId) => {
@@ -60,11 +64,3 @@ exports.getAuthenticatedUser = async (userId) => {
 
     return toSafeUser(user);
 };
-
-
-
-
-
-
-
-

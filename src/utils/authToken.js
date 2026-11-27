@@ -14,8 +14,13 @@ exports.createAccessToken = (userId) => jwt.sign(
     }
 );
 
-exports.verifyAccessToken = (token) => jwt.verify(
-    token,
-    getJwtSecret(),
-    { algorithms: ['HS256'] }
-);
+exports.verifyAccessToken = (token) => {
+    try {
+        return jwt.verify(token, getJwtSecret(), { algorithms: ['HS256'] });
+    } catch (error) {
+        if (error instanceof jwt.JsonWebTokenError) {
+            throw new AppError('Ugyldig eller udløbet login-session', 401);
+        }
+        throw error;
+    }
+};
