@@ -10,7 +10,6 @@ const gameSchema = new mongoose.Schema({
     publisher: String,
     developer: String,
     release_date: String,
-    freetogame_profile_url: String,
     price: { type: Number, default: 150 }
 });
 
